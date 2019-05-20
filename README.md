@@ -1,7 +1,8 @@
 # Java Programming Web Developer Course
 > 본 과정은 전공을 수행한 학생들은 NCS 기반의 체계화된 실무형 직업 훈련을 받을 수 있는 기회이며, 전공을 하지 않은 학생들도 소프트웨어 개발에 입문이 가능하도록 고도로 숙련된 직업 능력 개발 훈련교사 및 10년 이상의 많은 교육 경력과 국가 기술 자격을 취득한 선생님으로 이루어져 있으며 취업과 함께 정보처리 산업기사를 취득할 수 있는 최고의 기회가 될 것입니다.
 
-관련 홈페이지 : [솔데스크](http://soldesk.com/edu/edu01_02.asp?scrID=0000000110&pageNum=2&subNum=2&ssubNum=1)
+교육기관 : [솔데스크](http://soldesk.com/edu/edu01_02.asp?scrID=0000000110&pageNum=2&subNum=2&ssubNum=1)
+교육기간 : 19.05 ~ 19.11 (약 6개월)
 
 ---
 
@@ -121,7 +122,7 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 - JDBC 프로그램의 개발
 
 #### JSP ( 160H )
--TOMCAT 8 Install
+- TOMCAT 8 Install
 - JSP 스크립트 기본 문법, JSP 스크립틀릿 코드의 생성 및 실행
 - Page 지시자(Directive), class import, request 내부 객체 실습
 - response 내부 객체, out 내부 객체, application 내부 객체의 사용
@@ -159,16 +160,66 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 
 #### 데이터 베이스 ( 60H )
 - 데이터베이스 개론, MySQL 5.6 Potable(개발자 유형)설치
-- 서버 실행, 관리자 root계정 암호화, root 접속 설정, 계정 생성JDBC 드라이버설정, Eclipse Data Source Explorer의 MySQL 설정MySQL Data Type, 기본 SQL, 기본 SQL 실습, AUTO_INCREMENT Oracle XE 11g 개발자 버전 설치, Oracle 기본 데이터 타입, SQLSQL Developer or SQL Explorer client tool install Oracle 기본 데이터 타입, DDL(Data Definition Language)테이블 JOIN GROUP BY, HAVING, Group Functions(그룹화 함수), SubQueryTransaction, Sequence, Index, ViewPL/SQL의 이해, PL/SQL의 종류, PL/SQL의 구조, Script Stored Procedure Create & Execution - IN/OUT 매개변수
+- 서버 실행, 관리자 root계정 암호화, root 접속 설정, 계정 생성
+- JDBC 드라이버설정, Eclipse Data Source Explorer의 MySQL 설정
+- MySQL Data Type, 기본 SQL, 기본 SQL 실습, AUTO_INCREMENT
+- Oracle XE 11g 개발자 버전 설치, Oracle 기본 데이터 타입, SQL
+- SQL Developer or SQL Explorer client tool install
+- Oracle 기본 데이터 타입, DDL(Data Definition Language)
+- 테이블 JOIN
+- GROUP BY, HAVING, Group Functions(그룹화 함수), SubQuery
+- Transaction, Sequence, Index, ViewPL/SQL의 이해, PL/SQL의 종류, PL/SQL의 구조, Script
+- Stored Procedure Create & Execution - IN/OUT 매개변수
 
 #### 보안코딩 ( 60H )
-보안 코딩 테스트를위한 프로젝트 설정Apache Log4j framework 로그의 기록안전한 에러의 처리, web.xml 설정, 에러처리 페이지의 구현EL, JSTL을 이용한 MVC View 페이지 보안성 강화안전하지 않은 예외 처리, 오류 메시지를 통한 정보 노출 오류 상황 대응 부재, 널 포인트 역 참조 위험성 처리정수 오버플로우 위험성 처리 민감한 데이터에 접근하는 내부클래스 실습, System.exit() 사용 위험성배포시 제거되지 않고 남아 있는 코멘트 또는 디버깅 코드 위험성SQL Injection(삽입) 공격, SQL Injection자원 삽입 공격, 운영체제 명령어 삽입 공격세션 및 인증관리 취약 제거
+- 보안 코딩 테스트를위한 프로젝트 설정
+- Apache Log4j framework 로그의 기록
+- 안전한 에러의 처리, web.xml 설정, 에러처리 페이지의 구현
+- EL, JSTL을 이용한 MVC View 페이지 보안성 강화
+- 안전하지 않은 예외 처리, 오류 메시지를 통한 정보 노출
+- 오류 상황 대응 부재, 널 포인트 역 참조 위험성 처리
+- 정수 오버플로우 위험성 처리
+- 민감한 데이터에 접근하는 내부클래스 실습, System.exit() 사용 위험성
+- 배포시 제거되지 않고 남아 있는 코멘트 또는 디버깅 코드 위험성
+- SQL Injection(삽입) 공격, SQL Injection
+- 자원 삽입 공격, 운영체제 명령어 삽입 공격
+- 세션 및 인증관리 취약 제거
 
 #### 애플리케이션 테스트 수행
-JUnit 설정JAVA/JSP 테스트메소드 실행 추적을 위한 Eclipse 'Line Breakpoint'의 사용JSP, Beans(DAO, Process) JUNIT 테스트Spring + DataSource 테스트, spring-jdbc 모듈 추가 JUNIT 테스트Spring + MyBATIS + Oracle 테스트@RunWith, @ContextConfiguration, @Before, @Test, @After 설정Spring + DAO + MyBATIS + Oracle + JUNIT 테스트 Spring + Controller + Process + DAO + MyBATIS + Oracle 테스트
+- JUnit 설정
+- JAVA/JSP 테스트
+- 메소드 실행 추적을 위한 Eclipse 'Line Breakpoint'의 사용
+- JSP, Beans(DAO, Process) JUNIT 테스트
+- Spring + DataSource 테스트, spring-jdbc 모듈 추가 JUNIT 테스트
+- Spring + MyBATIS + Oracle 테스트
+- @RunWith, @ContextConfiguration, @Before, @Test, @After 설정
+- Spring + DAO + MyBATIS + Oracle + JUNIT 테스트
+- Spring + Controller + Process + DAO + MyBATIS + Oracle 테스트
 
 #### 애플리케이션 배포
-Github 회원 가입 설정, EGit 설정팀장이 Github에 공유할 프로젝트 생성 팀장이 프로젝트 최초로 등록하기(프로젝트 최초 공유) 팀원이 Github에서 프로젝트 소스를 최초로 Eclipse로 가져오기팀장을 포함한 팀원들의 소스 작업후 Commit and push팀장을 포함한 모든 팀원이 Github에서 변경된 소스 가져오기하나의 파일을 동시에 작업한 경우의 충돌 해결
+- Github 회원 가입 설정, EGit 설정
+- 팀장이 Github에 공유할 프로젝트 생성
+- 팀장이 프로젝트 최초로 등록하기(프로젝트 최초 공유)
+- 팀원이 Github에서 프로젝트 소스를 최초로 Eclipse로 가져오기
+- 팀장을 포함한 팀원들의 소스 작업후 Commit and push
+- 팀장을 포함한 모든 팀원이 Github에서 변경된 소스 가져오기
+- 하나의 파일을 동시에 작업한 경우의 충돌 해결
 
 #### 프로젝트
-프로젝트 주제, 주제 결정 프로젝트 주요 기술 결정, 주제별(테이블) 개발 진행 단계 프로젝트 주제 개인 역활의 결정, 개발 요소 파악하기요구사항의 파악, 요구 사항 정의(Defining Requirement)Usecase Diagram 작성 실습프로젝트 주제별 DBMS 설계, DBMS 정규화(Normalization)논리적 모델링, 물리적 모델링 통합 TABLE 구조 생성, SQL 생성공통 모듈 제작JAVA Code Coding convention(코딩 관례)통합전 개발, 등록, 목록, 조회, 수정, 삭제, 검색, 페이징의 구현Github를 이용한 소스 통합 및 충돌 처리User Experience Design 적용보안 코딩 적용, 입력값 검증의 구현PPT 제작
+- 프로젝트 주제, 주제 결정
+- 프로젝트 주요 기술 결정, 주제별(테이블) 개발 진행 단계
+- 프로젝트 주제 개인 역활의 결정, 개발 요소 파악하기
+- 요구사항의 파악, 요구 사항 정의(Defining Requirement)
+- Usecase Diagram 작성 실습
+- 프로젝트 주제별 DBMS 설계, DBMS 정규화(Normalization)
+- 논리적 모델링, 물리적 모델링 통합
+- TABLE 구조 생성, SQL 생성
+- 공통 모듈 제작
+- JAVA Code Coding convention(코딩 관례)
+- 통합전 개발, 등록, 목록, 조회, 수정, 삭제, 검색, 페이징의 구현
+- Github를 이용한 소스 통합 및 충돌 처리
+- User Experience Design 적용
+- 보안 코딩 적용, 입력값 검증의 구현
+- PPT 제작
+
+---
