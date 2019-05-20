@@ -1,7 +1,7 @@
 # Java Programming Web Developer Course
 > 본 과정은 전공을 수행한 학생들은 NCS 기반의 체계화된 실무형 직업 훈련을 받을 수 있는 기회이며, 전공을 하지 않은 학생들도 소프트웨어 개발에 입문이 가능하도록 고도로 숙련된 직업 능력 개발 훈련교사 및 10년 이상의 많은 교육 경력과 국가 기술 자격을 취득한 선생님으로 이루어져 있으며 취업과 함께 정보처리 산업기사를 취득할 수 있는 최고의 기회가 될 것입니다.
 
-교육기관 : [솔데스크](http://soldesk.com/edu/edu01_02.asp?scrID=0000000110&pageNum=2&subNum=2&ssubNum=1)
+교육기관 : [솔데스크](http://soldesk.com/edu/edu01_02.asp?scrID=0000000110&pageNum=2&subNum=2&ssubNum=1)  
 교육기간 : 19.05 ~ 19.11 (약 6개월)
 
 ---
@@ -106,7 +106,7 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 - 애플리케이션 배포
 - 전반적인 프로젝트 구축 기술
 
-### 커리큘럼
+### 커리큘럼 ( 960H )
 
 #### Java ( 120H )
 - Software 개론, 자바 언어의 이해, JDK1.8.0 설정
@@ -185,7 +185,7 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 - 자원 삽입 공격, 운영체제 명령어 삽입 공격
 - 세션 및 인증관리 취약 제거
 
-#### 애플리케이션 테스트 수행
+#### 애플리케이션 테스트 수행 ( 60H )
 - JUnit 설정
 - JAVA/JSP 테스트
 - 메소드 실행 추적을 위한 Eclipse 'Line Breakpoint'의 사용
@@ -196,7 +196,7 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 - Spring + DAO + MyBATIS + Oracle + JUNIT 테스트
 - Spring + Controller + Process + DAO + MyBATIS + Oracle 테스트
 
-#### 애플리케이션 배포
+#### 애플리케이션 배포 ( 60H )
 - Github 회원 가입 설정, EGit 설정
 - 팀장이 Github에 공유할 프로젝트 생성
 - 팀장이 프로젝트 최초로 등록하기(프로젝트 최초 공유)
@@ -205,7 +205,7 @@ JAVA 관련 기술, jQuery, Bootstrap등 Web 관련 기술, Open Source Framewor
 - 팀장을 포함한 모든 팀원이 Github에서 변경된 소스 가져오기
 - 하나의 파일을 동시에 작업한 경우의 충돌 해결
 
-#### 프로젝트
+#### 프로젝트 ( 200H )
 - 프로젝트 주제, 주제 결정
 - 프로젝트 주요 기술 결정, 주제별(테이블) 개발 진행 단계
 - 프로젝트 주제 개인 역활의 결정, 개발 요소 파악하기
