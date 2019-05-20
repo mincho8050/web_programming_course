@@ -1,70 +1,106 @@
-package oop0516;
+package oop0517;
 
 public class Test04_Quiz {
 
 	public static void main(String[] args) {
-		// 연습문제
-		// 1년 : 365일 ?시간 ?분 ?초
-		/*
-		 1분 : 60초
-		 1시간: 60분*60초 = 3600초
-		 1일 : 24시간*3600초 =86400초
-		 1년 : 365.2425*86400 = 31556952초
-		 */
+		// if, switch 연습문제
 		
 		
-		double year=365.2425;
-		int total=(int)(year*86400);
+		// 문1) 임의의 수가 양수, 음수, 제로인지 출력하시오
+		int a=-3;
+		if(a>0){
+			System.out.println("양수");
+		}else if(a<0){
+			System.out.println("음수");
+		}else if(a==0){
+			System.out.println("제로");
+		}//선생님방법
+		//나는 else로 그냥 마무리했는데, 선생님은 else if사용
 		
-		int day,hour,min,sec; //미리 값안하고 먼저 선언 후에 
+		// 문2) 코드값에 따라 성별을 출력하시오
+		//홀수 남자, 짝수 여자
+		int code=4;
 		
-		//이렇게 선언한 변수 대입하면댄다 이마리야
-		day=total/86400;
-		total=total%86400;//total를 계속 새로 선언해서 다음 식에 쓴다.
-		//System.out.println(total); //20952 > 첫번째 토탈 변경 후 값
+		if(code%2==0){
+			System.out.println("여성");
+		}else{
+			System.out.println("남성");
+		}//이건 내가한거. 선생님은 조건에 code가 1또는3, 2또는4 이렇게 조건을 두기도 함. 홀짝도 사용.
 		
-		hour=total/3600;
-		total=total%3600;
-		//System.out.println(total); //2952 > 두번째 토탈 변경 후 값
-		//
-		
-		min=total/60; //2952를 60으로 나눈 값.
-		sec=total%60; //2952를 60으로 나눈 뒤 나머지값.
-		
-		System.out.println(day+"일 "+hour+"시 "+min+"분 "+sec+"초");
-		
-		
- //---------------------------------------------------------------------------
-		
-		// 문) 국어점수가 80~89점 사이인지 확인하시오.
-		
-		int kor=86;
-		System.out.println((kor>=80)&&(kor<=89));
-		
-		
-		// 문) 임의의 문자가 알파벳 대문자인지 확인하시오.
-		char ch='t';
-		System.out.println(ch>='A'&&ch<='Z'); //대문자확인법. 소문자대문자는+-32차이.
-		                 //'t'>='A'  't'<='Z'
-		                 // true      false
-		                 //false
-		
-		// 문) 해당년도가 윤년인지 확인하시오.
-		// 윤년 구하는 공식 > 산술적인 의미라 쓰면 안됨.
-		int y=2019;
-		System.out.println(y%4==0&&y%100!=0||y%400==0);
+		//선생님이 하신 switch를 사용한 문제풀이.
+		switch(code%2){
+		case 0:System.out.println("여자");break;
+		case 1:System.out.println("남자");break;
+		}
 		
 		
+		// 문3) 연산기호에 따라 결과값을 출력하시오
+		//출력결과 : 5+7=12 / 만약 op변수가'-'라면 5-7=-2
+		//op변수가 *라면 5*7=35 , /라면 5/7=0 등등
+		int c=5,d=7;
+		char op='/';
+		
+	    switch(op){
+	    case '+':System.out.println(c+"+"+d+'='+(c+d));break;
+	    case '-':System.out.println(c+"-"+d+'='+(c-d));break;
+	    case '*':System.out.println(c+"*"+d+'='+(c*d));break;
+	    case '/':System.out.println(c+"/"+d+'='+((double)c/(double)d));break;
+	    case '%':System.out.println(c+"%"+d+'='+(c%d));break;
+	    }//내가한거
+	    //나는 소수점이 안나오넹..! 
+	    //소수점 나오게 변경해보기
+	    //결과부분에 그냥 c/d로 했는데
+	    //(double)(c/d)로 하면 결과값이 0.0으로 나옴 그래서
+	    //(double)c/(double)d 이렇게 해줘야 결과값이 정상적으로 실수형으로 나옴.
+	    
+	    //선생님이 한 방법
+	    int res1=0; //정수인 결과값
+	    double res2=0.0; //실수인 결과값
+	    
+	    switch(op){//switch에는 char형도 들어올 수 있다이마리야
+	    case '+':res1=c+d;break;
+	    case '-':res1=c-d;break;
+	    case '*':res1=c*d;break;
+	    case '/':res2=(double)c/d;break;
+	    case '%':res1=c%d;break;
+	    }
+		if(op=='/'){
+			System.out.println(c+""+op+""+d+"="+res2);
+		}else{
+			System.out.println(c+""+op+""+d+"="+res1);
+		}
+	    
+		
+		
+		
+		// 문4) 문제2의 코드를 참조해서 나이를 계산하시오
+		int myYear=10;//내가 태어난 연도, 주민번호 앞자리 2자리.
+		// > 나이 : 2019-태어난년도 > 연도값 불러오는 클래스있음. > 나중에배움.
 
+		if(code==1||code==2){
+			System.out.println((2019-1900)-myYear+"살");
+		}else if(code==3||code==4){
+			System.out.println((2019-2000)-myYear+"살");
+		}//내가한거
+		
+		//선생님이 한거 , switch 사용.
+		switch(code){
+		case 1:
+		case 2:myYear=1900+myYear;break;
+		case 3:
+		case 4:myYear=2000+myYear;break;
+		}//1과 3에 내용을 넣어주어도 되지만 1,2가같고 3,4가 같으니까 내용 안적고 해도 된당
+		System.out.println(myYear);
+		//여기서의 myYear은 switch에서 사용한게 누적되어 나옴 결과값 2010임.
+		
+		int myAge=2019-myYear;
+		System.out.println("나이: "+myAge+"살");
+		
+	
 		
 		
+				
 		
-		
-		
-		
-		
-		
-		
-	}
+	}//
 
-}
+}//
