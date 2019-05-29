@@ -1,4 +1,6 @@
-algorithm 유형
+## algorithm 유형
+
+***
 
 1) 정렬
  if(>){tmp=a,a=b,b=tmp} swap시킴.
