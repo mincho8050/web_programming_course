@@ -111,6 +111,7 @@ public class Test05_String {
 	    
 	    //문자열 분리하기.
 	    //문자열 분리하려면 규칙성이 있어야함. > 제일 많이 쓰는게 공백과 ,(콤마)
+	    //엑셀의 csv문서는 ,로 구분한다.
 	    //Gone With The Wind
 	    //.split()의 리턴형은 String[] 스트링 1차원배열이다.
 	    String[] word=str.split("n"); //n을기준으로 문자열 분리
@@ -254,11 +255,18 @@ public class Test05_String {
 	    	}
 	    	
 	    	
+	    	System.out.println();
+	    	System.out.println("------------------");
+//-----------------------------------------------------------------------------	    	
 	    
+	    	/*
+	    	 * 과제 4) 
+	    	 * 파일명, 확장명을 분리해서 출력하시오. 
+	    	 * 파일명 : 2019.05.30.sky
+	    	 * 확장명 : png
+	    	 */
 	    	
-	    
-	    	
-	    	
+	    	String filename4="d:/java0514/workspace/2019.05.30.sky.png";
 	    	
 		
 	}//main
