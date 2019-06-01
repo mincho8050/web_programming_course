@@ -1,6 +1,6 @@
 package oop0531;
 
-
+import java.util.*;
 
 
 
@@ -17,35 +17,18 @@ public class Test05_Jumin {
 		 * 
 		 * 
 		 */
-
-	String num="9307102018817";
-	String[] num2=num.split("");
-
+		Scanner sc=new Scanner(System.in);
+		
+    	System.out.println("주민번호를 입력하시오");
+		Jumin id=new Jumin(sc.next());
+		id.disp();
 	
 	
-	
-	int hap=0;	
-	for(int a=0;a<num2.length;a++){
-		hap=Integer.parseInt(num2[a])*a+2;
-		if(a>=9){
-			hap=Integer.parseInt(num2[a])*a-7;
-			
-		}
-		hap++;
-
-	}//for
+		
+		
 	
 
-	 
-   System.out.println(hap);
-	int check=(hap%11)-2;
-	int last=Integer.parseInt(num.substring(num.length()-1));
-		
-		
-		System.out.println(check);
-		System.out.println(last);
-		
-		
+
 		
 		
 	}//main
