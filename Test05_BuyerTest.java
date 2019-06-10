@@ -2,7 +2,8 @@ package oop0609;
 
 import java.util.Vector;
 
-//import oop0610.Product;
+//oop0610의 Test05번과 같은문제인데. Vector를 사용해서 문제풀이함. + 반품에 관한 문제도 있음.
+
 
 class Product extends Object{
 	public int price;		//상품가격
