@@ -2,7 +2,7 @@ package oop0604;
 
 class Test{
 	
-	// 1)try!catch를 이용한 예외처리
+	// 1)try~catch를 이용한 예외처리
 //	public void view(){
 //		
 //		try{
