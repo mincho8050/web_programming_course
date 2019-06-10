@@ -58,7 +58,7 @@ public class Test04_Object {
 		
 		// 가장 일반적인 형태
 		Integer inte=new Integer(3); 
-		System.out.println(inte);				// "3"
+		System.out.println(inte);				// 3
 		System.out.println(inte.toString()); 	// "3" 같은 의미.
 		
 		
