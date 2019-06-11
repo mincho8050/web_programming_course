@@ -19,7 +19,7 @@ public class Test03_Input {
 			FileReader in=new FileReader(fileName);
 			
 			//2) 파일 내용 읽기
-			//reader계열이니까 BufferReader클래스 이용.
+			//reader계열이니까 BufferedReader클래스 이용.
 			BufferedReader br=new BufferedReader(in);
 			int num=0;
 			while(true){ //무한루프
