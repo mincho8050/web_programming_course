@@ -141,7 +141,7 @@ public class Test05_String {
 	     * 출력결과 : webmaster
 	     *          soldesk.com
 	     */
-	    String email="hh8050@naver.com";
+	    String email="webmaster@soldesk.com";
 	    
 	    int num1=email.indexOf("@");
 	    String[] eword=email.split("@");
