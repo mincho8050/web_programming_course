@@ -1,1 +1,1 @@
-empty
+basicJava > default package
