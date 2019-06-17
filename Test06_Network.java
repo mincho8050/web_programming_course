@@ -19,6 +19,7 @@ public class Test06_Network {
 			URL url=new URL(address);
 			InputStream in=url.openStream();
 			FileOutputStream out=new FileOutputStream("d:/java0514/workspace/basicNetwork/soldesk.html");
+			//여기 경로에 
 			
 			while(true){
 				int data=in.read();
