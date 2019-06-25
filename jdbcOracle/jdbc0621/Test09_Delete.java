@@ -29,8 +29,7 @@ public class Test09_Delete {
 			con=DriverManager.getConnection(url, user, password);
 			System.out.println("오라클DB 서버 연결 성공!!");
 //---------------------DB연결-------------------------------------------
-			//문) '이강인'의 국영수 점수와 평균 점수를 수정하시오
-
+			 //문) 이름 '이강인' 행을 삭제하시오 
 			
 			StringBuilder sql=new StringBuilder();
 			sql.append(" DELETE FROM sungjuk ");
