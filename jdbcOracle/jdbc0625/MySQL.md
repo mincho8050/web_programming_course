@@ -12,3 +12,4 @@ www.mysql.com > downloads > MySQL Community Server 페이지 하단 > Looking fo
 
 www.mysql.com > downloads >  MySQL Community Server 페이지 하단 > MySQL Connectors 왼쪽 > Connector/J > Looking for previous GA versions? > mysql-connector-java-5.1.47.zip 
 
+
