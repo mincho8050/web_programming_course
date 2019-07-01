@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>05_동영상.html</title>
+ </head>
+ <body>
+  
+	<!-- 
+		동영상 : .mp4 .avi .mp3 .ram
+	-->
+
+	<!--  1) old 버전 -->	
+		<embed src="../music/candy.mp3">
+		<hr>
+		<embed src="../music/videoplayback.mp4" width="350" height="200">
+		
+
+		<br><br><br><br><br>
+	
+	<!-- 2) HTML5 버전 -->
+
+		<audio autoplay controls>
+			<source src="../music/candy.mp3">
+		</audio>
+		<!-- <audio /> 열고닫는태그를 이렇게 같이 쓸 수 있음. 간혹 안 먹힐 때도 있다고함. -->
+
+		<hr>
+
+		<video 
+			width="300"
+			height="350" 
+			poster="../music/candy.jpg" controls>
+			<source src="../music/candy.mp3">
+		</video>
+		
+		<br>
+
+			<video 
+			width="300"
+			height="350" 
+			poster="../music/crayonpop.jpg" controls>
+			<source src="../music/crayonpop.mp4">
+		</video>
+
+
+ </body>
+</html>
