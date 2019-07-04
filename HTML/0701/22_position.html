@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>22_position.html</title>
+
+	<style>
+		body{background-color: #3BB39E;margin: 0 auto;}
+		#parent1 {
+		  position: static;/*기본값*/
+		  background-color: #A024BE;
+		  width: 300px;
+		  height: 100px;
+		}
+
+		#child1 {
+		  position: absolute;/*절대적위치*/
+		  background-color: #FD0000;
+		  top: 70px;
+		  right: 15px;
+		}
+
+		#parent2 {
+		  position: relative;/*상대적위치*/
+		  background-color:#1152B3;
+		  width: 300px;
+		  height: 100px;
+		}
+
+		#child2 {
+		  position: absolute;
+		  background-color:#5ACAE4;
+		  top: 70px;
+		  right: 15px;
+		}
+
+		#parent3 {
+		  position: absolute;
+		  background-color:#FF8049;
+		  width: 300px;
+		  height: 100px;
+		  top: 750px;
+		  right: 15px;
+		}
+
+		#child3 {
+		  position: absolute;
+		  background-color:#580606;
+		  top: 70px;
+		  right: 15px;
+		}
+
+		#parent4 {
+		  position: fixed;/*고정*/
+		  border: 1px solid blue;
+		  background-color: rgba(255,200,200,0.5);  
+		  width: 300px;
+		  height: 100px;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		}
+
+		#child4 {
+		  position: absolute;
+		  background-color:rgba(255,40,20);
+		  top: 70px;
+		  right: 15px;
+		}
+</style>
+</head>
+<body>
+
+	<!-- 레이어(투명용지가 여러장) -->
+	
+	<h1>The position property</h1>
+
+	<h2>position: static;</h2>
+	<div id="parent1">Parent1: position: static.
+	  <div id="child1">Child1: position: absolute, right: 15px, top: 70px</div>
+	</div>
+
+	<h2>position: relative;</h2>
+	<div id="parent2">Parent2: position: relative.
+	  <div id="child2">Child2: position: absolute, right: 15px, top: 70px</div>
+	</div>
+
+	<h2>position: absolute;</h2>
+	<div id="parent3">Parent3: position: absolute, top: 750px, right: 15px.
+	  <div id="child3">Child3: position: absolute, right: 15px, top: 70px</div>
+	</div>
+
+	<h2>position: fixed;</h2>
+	<div id="parent4">Parent4: position: fixed, bottom: 0, left: 0, right: 0.
+	  <div id="child4">Child4: position: absolute, right: 15px, top: 70px</div>
+	</div>
+
+
+</body>
+</html>
