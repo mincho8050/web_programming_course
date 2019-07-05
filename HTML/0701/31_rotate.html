@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>31_rotate.html</title>
+
+	<style>
+		#menu{
+			margin: 0 auto;
+			position: relative;
+			width: 200px;
+			height: 200px;
+			background-color: #C7C7C7;
+			border-radius: 20px;
+			cursor: pointer;
+		}
+		#menu:hover{
+			background-color: #E9AA42;
+		}
+
+		#menu>strong{
+			position: absolute;
+			font-size: 20px;
+			font-weight: bold;
+			bottom: 20px;
+			left: 55px;
+		}
+		#menu>.gear{
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			background-image: url(../images/gear-grey.png);
+			background-size: cover;
+		}
+
+		/*이미지배치*/
+		#menu>.gear:first-child{
+			top:50px;
+			left: 62px;
+		}
+		#menu>.gear:nth-child(2){
+			top:80px;
+			left: 84px;
+			transform: rotate(16deg);
+		}
+
+		#menu:hover>.gear{
+			background-image: url("../images/gear.png");
+			transition: .4s linear;/*linear | ease/*/
+		}
+		
+		#menu:hover>.gear:first-child{
+			transform: rotate(-180deg);
+		}
+		#menu:hover>.gear:nth-child(2){
+			transform: rotate(196deg);
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="menu">
+		<div class="gear"></div>
+		<div class="gear"></div>
+		<strong>SETTINGS</strong>
+	</div>
+	
+</body>
+</html>
