@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>02_연산자.html</title>
+	<style></style>
+</head>
+<body>
+
+	<script>
+		/*
+		연산자
+		 */
+		
+		// document.write((5+3)+"<hr>");
+		// document.write((5-3)+"<hr>");
+		// document.write((5*3)+"<hr>");
+		// document.write((5/3)+"<hr>");
+		// document.write((5%3)+"<hr>");
+
+		// document.write((5<3)+"<hr>");
+		// document.write((5<=3)+"<hr>");
+		// document.write((5>3)+"<hr>");
+		// document.write((5>=3)+"<hr>");
+		// document.write((5==3)+"<hr>")
+		// document.write((5!=3)+"<hr>");
+
+		//--------------------------------------------------
+		
+		//논리연산자
+		//문)윤년인지 확인하시오
+		// var y=2019;
+
+		// if(y%4==0&&y%100!=0||y%400==0){
+		// 	document.write("윤년");
+		// }else{
+		// 	document.write("평년");
+		// };
+		// document.write(y%4==0&&y%100!=0||y%400==0);
+		// document.write("<hr>");
+
+
+
+
+		//삼항연산자
+		//문)세개의 수 중에서 가장 큰 값을 구하시오
+		// var a=3,b=5,c=7;
+
+		// var max=(a<b)?b:a;
+		// max=(c<max)?max:c;
+		// document.write("최댓값은 "+max+"<hr>");
+
+
+
+		//1증감연산자
+		
+		// var x=10,y=10;
+		// var p=++x;
+		// var q=y--;
+
+		// document.write(x+"<hr>");	//11
+		// document.write(y+"<hr>");	//9
+		// document.write(p+"<hr>");	//11
+		// document.write(q+"<hr>");	//10
+
+		//-----------------------------------------------
+		
+
+		//형변환
+		//1)The Number() Method
+		//문자를 숫자로 변형
+		// document.write(Number(true));		//1
+		// document.write(Number(false));		//0
+		// document.write(Number("10"));		//10
+		// document.write(Number(" 10"));		//10
+		// document.write(Number("10 "));		//10
+		// document.write(Number(" 10 "));		//10
+		// document.write(Number("10.33"));	//10.33	
+		// document.write(Number("10,33"));	//NaN
+		// document.write(Number("10 33"));	//NaN
+		// document.write(Number("John"));		//NaN
+		//NaN : 에러메세지로 이렇게 뜰때 쓰레기값이라는 의미.(자바스크립트)
+		
+		//------------------------------------------------------------------
+		
+		//2)The parseInt() Method
+		// document.write(parseInt("10"));			//10
+		// document.write(parseInt("10.33"));		//10
+		// document.write(parseInt("10 20 30"));	//10
+		// document.write(parseInt("10 years"));	//10
+		// document.write(parseInt("years 10"));	//NaN
+		// document.write("<hr>");
+
+		//--------------------------------------------------------------------
+		
+		//3)The parseFloat() Method
+		// document.write(parseFloat("10"));		//10
+		// document.write(parseFloat("10.33"));	//10.33
+		// document.write(parseFloat("10 20 30"));	//10
+		// document.write(parseFloat("10 years"));	//10
+		// document.write(parseFloat("years 10"));	//NaN
+		// document.write("<hr>");
+
+		//-------------------------------------------------------------------
+
+		//The toString() Method	(문자형변환)
+		// var x=123;
+		// document.writeln(x.toString());			//"123"
+		// document.write((123).toString());		//"123"
+		// document.write((100+23).toString());	//"123"
+
+		// //The valueOf() Method	(참조형(Integer) -> 기본형(int))
+		// document.write(x.valueOf());			//123		
+		// document.write((123).valueOf());		//123	
+		// document.write((100+23).valueOf());		//123	
+		
+
+		//----------------------------------------------------------------------
+		
+
+		//isNaN()
+		//값이 숫자형태로 되어져있는지 물어보는것. 
+		//숫자면 false , 숫자가 아니면 true
+		
+		// document.write(isNaN(123));				//false
+		// document.write(isNaN(-1.23));			//false
+		// document.write(isNaN(5-2));				//false
+		// document.write(isNaN(0));				//false
+		// document.write(isNaN('123'));			//false
+		// document.write(isNaN('Hello'));			//true
+		// document.write(isNaN('2005/12/12'));	//true
+		// document.write(isNaN(''));				//false
+		// document.write(isNaN(true));			//false
+		// document.write(isNaN(undefined));		//true
+		// document.write(isNaN('NaN'));			//true
+		// document.write(isNaN(NaN));				//true
+		// document.write(isNaN(0 / 0));			//true
+
+		//undefined , NaN : 쓰레기값
+		
+
+		//-----------------------------------------------------------------------
+		
+		//eval()
+		//"x * y" , "2 + 2" , "x + 17" 는 문자열로 구성되어있는데 계산해주는 함수
+		//val a1,a2,a3,a4,a5;
+		//원래 변수명은 a1 에서 a와 1을 분리해서 생각할 수 없는데 
+		//eval()를 사용하면 변수명뒤에 숫자를 반복문처리해서 할 수 있음(따로 볼 수 있음)
+		//-> eval(a+"1") -> a1 변수로 인식함.
+		var x=10,y=20;
+		document.write(eval("x * y") + "<br>");		//200
+		document.write(eval("2 + 2") + "<br>");		//4
+		document.write(eval("x + 17") + "<br>");	//27
+
+
+
+
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>

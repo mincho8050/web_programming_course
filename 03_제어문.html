@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>03_제어문.html</title>
+	<style>
+		#demo>table,tr,td{
+			border-collapse: collapse;
+			text-align: center;
+			border:1px solid #000000;
+		}
+		#demo>table{
+			width: 400px;
+			height: 400px;
+			cursor:default;
+		}
+		#demo table tr>td:nth-child(2):hover{
+			opacity:0.8;			
+			background-color: #B68888;
+			font-weight: bold;
+		}
+		#demo table tr>td:nth-child(1){
+			background-color: #B3B2B5;
+			font-weight: bold;
+		}
+		/*
+		#demo>table>tr>td로 하면 먹히지 않음. 직속?이런게 아닌가..?
+		 */
+		#demo table tr:nth-child(1)>td{
+			background-color: #8FACBA;
+			height:40px;
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div id="demo"></div>
+
+	<script>
+		//조건문 : if문, switch~case문
+		//반복문 : for문, while문, do~while문
+		//break문 , continue문
+		
+
+		//성적프로그램
+		
+		var uname="홍길동";
+		var kor=100,eng=95,mat=100;
+		var total=kor+eng+mat;
+		var aver=parseInt(total/3);
+
+		//문) 국어점수의 학점을 구하시오
+		var grade="";
+		if(kor>90){
+			grade="국어:A학점";
+		}else if(kor>80){
+			grade="국어:B학점";
+		}else if(kor>70){
+			grade="국어:C학점";
+		}else if(kor>60){
+			grade="국어:D학점";
+		}else{
+			grade="국어:F학점"
+		}
+
+		document.write(grade+"<br>");
+
+
+		//과락(평균을 기준으로 합격,재시험,불합격)
+		
+		var result="";
+
+		if(aver>=70){
+			if(kor<40||eng<40||mat<40){
+				result="재시험";
+			}else{
+				result="합격";
+			}
+		}else{
+			result="불합격";
+		}
+		
+		document.write(result+"<br>");
+
+
+		//10점당 별 * 한개씩
+		
+		var star="";
+
+		for(n=0;n<parseInt(aver/10);n++){
+			star +="*";
+		}
+
+		document.write(star+"<br>");
+
+
+		//문)평균 95점 이상 장학생
+		
+		var special="";
+		if(aver>=95){
+			special="장학생";
+		}
+		document.write(special+"<br>");
+
+		//문) 위의 데이터값을 문자열 변수에 모두 모아서 테이블로 작성한 후 id=demo에 출력하시오
+		
+		var table="";
+		table +="<table>";
+		table +="<tr>";
+		table +="	<td colspan='2'>성적표</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>이름</td>";
+		table +="	<td>"+uname.toString()+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>국어</td>";
+		table +="	<td>"+kor.toString()+"점"+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>영어</td>";
+		table +="	<td>"+eng.toString()+"점"+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>수학</td>";
+		table +="	<td>"+mat.toString()+"점"+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>총점</td>";
+		table +="	<td>"+total.toString()+"점"+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>평균</td>";
+		table +="	<td>"+aver.toString()+"점"+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>과락</td>";
+		table +="	<td>"+result.toString()+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>별점</td>";
+		table +="	<td>"+star.toString()+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>장학여부</td>";
+		table +="	<td>"+special.toString()+"</td>";
+		table +="</tr>";
+		table +="<tr>";
+		table +="	<td>국어 학점</td>";
+		table +="	<td>"+grade.toString()+"</td>";
+		table +="</tr>";
+		table +="</table>";
+
+		document.getElementById("demo").innerHTML=table;
+
+
+	</script>
+
+
+	
+</body>
+</html>
