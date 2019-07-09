@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>05_배열메소드.html</title>
+	<style></style>
+</head>
+<body>
+
+	<script>
+		//배열 관련 메소드
+/*		var fruits=["Banana", "Orange", "Apple", "Mango"];
+
+		//Banana,Orange,Apple,Mango
+		document.write(fruits+"<hr>");
+		document.write(fruits.toString()+"<hr>");
+
+		//Banana*Orange*Apple*Mango
+		document.write(fruits.join("*")+"<hr>");
+
+		fruits.pop();	//배열 마지막 요소 제거
+		//Banana,Orange,Apple
+		document.write(fruits.toString()+"<hr>");
+
+		fruits.push("Kiwi");	//배열 마지막 요소 추가
+		//Banana,Orange,Apple,Kiwi
+		document.write(fruits.toString()+"<hr>");
+
+
+		fruits.shift();	//첫 번째 배열 요소를 제거하고 다른 모든 요소를 낮은 인덱스로 이동!
+		//Orange,Apple,Kiwi
+		document.write(fruits.toString()+"<hr>");
+
+		fruits.unshift("Lemon");	//첫번째 요소 추가
+		//Lemon,Orange,Apple,Kiwi
+		document.write(fruits.toString()+"<hr>");
+
+		fruits.splice(0, 1);	//0,1번째 요소 제거
+		//Orange,Apple,Kiwi
+		document.write(fruits.toString()+"<hr>");
+
+		var myGirls = ["Cecilie", "Lone"];
+		var myBoys = ["Emil", "Tobias", "Linus"];
+		//concat() 메소드는 기존 배열은 병합(연결)하여 새 배열을 만든다.
+		//여러개의 배열 인수를 사용할 수 있다. 
+		//> arr1.concat(arr2, arr3);
+		//인수로 값을 사용할 수 있다.
+		//> var myChildren = arr1.concat(["Emil", "Tobias", "Linus"]);   
+		var myChildren = myGirls.concat(myBoys);
+		//Cecilie,Lone,Emil,Tobias,Linus
+		document.write(myChildren.toString()+"<hr>"); 
+
+		var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+		//배열의 일부를 새 배열로 분할.
+		// >fruits.slice(1, 3);
+		// > Orange,Lemon 출력 ( 마지막 지정한 자릿수는 포함되지 않음. 실제 1~2)
+		var citrus = fruits.slice(1);
+		//Orange,Lemon,Apple,Mango
+		document.write(citrus+"<hr>");*/
+
+		//----------------------------------------------------------------
+		
+		//Array Sort
+		
+		//오름차순
+		var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+		fruits.sort();
+		//Apple,Banana,Lemon,Mango,Orange
+		document.write(fruits.toString()+"<hr>");
+
+		//내림차순
+		var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+		fruits.reverse();
+		//Mango,Apple,Lemon,Orange,Banana
+		document.write(fruits.toString()+"<hr>");
+
+
+		//Numberic Sort
+		
+		//오름차순
+		var points = [40, 100, 1, 5, 25, 10];
+		points.sort(function(a, b){return a - b});	//비교기능
+		//1,5,10,25,40,100
+		document.write(points.toString()+"<hr>");
+
+		//내림차순
+		var points = [40, 100, 1, 5, 25, 10];
+		points.sort(function(a, b){return b - a});
+		//100,40,25,10,5,1
+		document.write(points.toString()+"<hr>");
+				
+		
+
+
+	</script>
+	
+</body>
+</html>
