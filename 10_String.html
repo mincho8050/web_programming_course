@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>10_String.html</title>
+	<style></style>
+</head>
+<body>
+
+	<script>
+		//String Method
+		
+		var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    document.write(txt.length+"<br>");	//26
+	    var str = "Please locate where 'locate' occurs!";
+	    document.write(str.indexOf("locate")+"<br>");	//7 > 없으면 -1
+	    document.write(str.lastIndexOf("locate")+"<br>");//21
+	    document.write(str.slice(7, 13)+"<br>");	//locate
+	    document.write(str.substring(7, 13)+"<br>");//locate
+	    document.write(str.replace("where", "W3Schools")+"<br>");//Please locate W3Schools 'locate' occurs!
+	    document.write(str.split(" ")+"<br>");//Please,locate,where,'locate',occurs!
+
+//-----------------------------------------------------------------------------------
+		
+		//문자열 앞뒤 공백 제거
+		//1)trim()
+		var str = "       Hello World!        ";
+		alert(str.length);			//27 > 공백포함길이
+		alert("#"+str.trim()+"#");	//"#"는 공백제거됐는지 확인하는 기호
+									//#Hello World!#
+		alert(str.trim().length);	//12
+
+
+		//2)정규표현식(regular expression)
+		//공백을 빈 문자열로 replace
+		//예전 브라우저들은 이 방식을 사용(trim 나오기 전에)
+		var str = "       Hello World!        ";
+		alert("#"+str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '')+"#");//#Hello World!#
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
