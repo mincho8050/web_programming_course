@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>13_입력폼.html</title>
+</head>
+<body>
+
+	<!-- 입력양식(폼컨트롤) -->
+	<!-- 
+		HTML Input Types
+	<input type="button">
+	<input type="checkbox">
+	<input type="color">
+	<input type="date">
+	<input type="datetime-local">
+	<input type="email">
+	<input type="file">
+	<input type="hidden">
+	<input type="image">
+	<input type="month">
+	<input type="number">
+	<input type="password">
+	<input type="radio">
+	<input type="range">
+	<input type="reset">
+	<input type="search">
+	<input type="submit">
+	<input type="tel">
+	<input type="text">
+	<input type="time">
+	<input type="url">
+	<input type="week">	
+ -->
+
+	<!-- input 요소 -->
+	<input type="button" value="확인">
+	<input type="button" value="검색">
+
+	<hr>
+	<!-- 입력자료를 서버로 전송 -->
+	<input type="submit" value="전송">
+	<!-- 사용자가 입력한 정보를 취소 -->
+	<input type="reset" value="취소">
+
+	<hr>
+	<!-- type=button + type=submit -->
+	<button>회원가입</button>
+	<hr>
+
+	<p>회원가입</p>
+	<form>
+		
+	</form>
+	<!-- form 안에 form이 오면 안됨.  -->
+
+	<!-- 
+	<form> 관련 속성들
+		name="" 폼이름
+		id="" 폼아이디
+		method="" 전송방식 get | post
+		action="" 요청한 입력자료를 서버에서 받는 페이지 및 명령어
+		enctype="multipart/form-data" 파일 첨부해서 전송하는 경우
+
+	 -->
+
+	<form name="memfrm" 
+		  id="memfrm"
+	 	  method="get"
+	 	  action="ok.jsp"
+	 	  enctype="" 
+	><!--
+	대부분 id는 name이름과 동일하게 준다.
+	method에서 get,post에 따라 받는 명령어가 다름. > 여기서부터는 jsp 부분. 
+	action 예시인 ok.jsp면 jsp언어로 받겠다는 의미. > 여기서부터 언어가 달라짐
+-->
+	아이디:<input type="text" name="userid" id="userid" 
+				  size="15" 
+				  maxlength="7"
+				  placeholder="아이디입력"
+				  required  
+				  ><!--required : length가 0일때 못하게끔 하는 것.-->
+	비밀번호:<input type="password" 
+				    name="userpw"
+				    id="userpw"
+				    size="15"
+				    maxlength="7"
+				    placeholder="비밀번호입력" 
+				    >
+	<hr>
+	이름:<input type="text" 
+				name="username" id="username"
+				size="20" maxlength="20"
+				autofocus 
+	><!--autofocus 는 실행되면 자동으로 커서가 창에 가있도록 하는거. 깜빡깜빡..-->
+
+	<hr>
+	우편번호:<input type="text" 
+					name="zipcode"
+					id="zipcode"
+					size="5"
+					readonly 
+	><!--readonly 는 커서가 안들어가게 하기-->
+			<input type="button" value="주소찾기">
+
+			<hr>
+
+	<!-- radio , checkbox는 boolean값을 갖는다. -->
+	성별:<input type="radio" name="gender" value="m">남
+		 <input type="radio" name="gender" value="f" checked>여 
+		 <!--
+		 name으로 같은 그룹을 해버리면 선택을 하나밖에 못함
+		 name은 변수. value값을 담아서 전달하는거.
+		 그러니까 남자를 선택했으면 변수는gender 고 m을 가지고 있음.
+		 checked 는 미리 체크되어있는것.
+		 나중에 자바스크립트나 제이쿼리에서 boolean값으로 하면 됨(체크 되었는지 안되었는지)
+		-->
+	<br>
+	취미:<input type="checkbox" name="h1" value="movie" checked>영화
+		 <input type="checkbox" name="h2" value="mountain">등산
+		 <input type="checkbox" name="h3" value="cook">요리
+		 <!-- 각각 영화,등산,요리에서는 체크한건지,안한건지 두개밖에 없음 > boolean형 -->
+	<hr>
+
+	생년월일: <select name="myYear" id="myYear">
+		<option value="2019">2019년</option>
+		<option value="2018" selected>2018년</option> <!--selected는 목록에 미리 먼저 보여지는거/ 이거 안하면 맨 처음게 보여짐-->
+		<option value="2017">2017년</option>		
+	</select>
+	<!-- multiple : Ctrl이용해서 다중 선택 가능 -->
+	<select name="myMonth" id="myMonth" multiple>
+		<option value="1">1월</option>
+		<option value="2">2월</option>
+		<option value="3">3월</option>		
+	</select>
+
+	<hr>
+	배송메세지:
+	<textarea rows="5" cols="20" name="msg">경비실에 맡겨주세요</textarea>
+	
+	<hr>
+	<input type="button" value="버튼">
+	<input type="submit" value="등록"> <!--서버로전송 내가 있는 곳의 form을 전송 (다른곳에 form이 있더라도!) > jsp할때 많이 쓰임-->
+	<input type="reset"  value="취소">
+		
+	</form>
+
+
+	<hr>
+	<!-- method를 아무것도 안하면 get방식임 -->
+	<form action="ok2.jsp">
+		<input type="text" name="word">
+		<!-- <img src=""> + type=submit -->
+		<input type="image" src="../images/search.png">
+		<!-- 성격은 text박스와 동일함. 차이점은 화면상에 보이지 않음.
+			웹페이지에 노출되지는 않지만 폼에 포함된 컨트롤 요소-->
+		<input type="hidden" name="page" value="3">
+		<input type="hidden" name="col" value="subject">
+
+		<!-- 
+			검색 버튼 누르면
+			file:///D:/java0514/frontend/html/ok2.jsp?word=enctype&x=13&y=12&page=3&col=subject
+			이렇게 주소창에 뜸. 
+			&가 의마하는거. 앞에 있는 변수와 뒤에있는 변수를 구분하는 기호
+			page변수에 3이 담겨있음
+			col변수에 subject가 담겨있음. 
+		-->
+	</form>
+
+	<hr>
+	<!-- 파일 첨부해서 전송 -->
+	<form enctype="multiple/form-data">
+		첨부파일:<input type="file">
+	</form>
+
+
+</body>
+</html>

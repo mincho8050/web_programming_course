@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>17_audio.html</title>
+	<style></style>
+</head>
+<body>
+	<div style="text-align: center;">
+		<h1>음악목록</h1>
+		<img src="../music/gangnamstyle.jpg" width="300px" height="250px" id="poster">
+		<br><br>
+		<audio id="audio1" src="../music/gangnamstyle.mp3" controls autoplay></audio>
+	</div>
+	<hr>
+	<div style="margin: 0 auto; width: 50%;">
+		<ol>
+			<!-- 직접 함수를 링크에 적어 호출할 수 있음(링크는 클릭하니까!) > javascript:loadMusic() 식으로 -->
+			<li><a href="javascript:loadMusic('../music/genie.jpg','../music/genie.mp3')">소원을 말해봐</a></li>
+			<li><a href="javascript:loadMusic('../music/itaewonfreedom.jpg','../music/itaewonfreedom.mp3')">이태원프리덤</a></li>
+			<li><a href="javascript:loadMusic('../music/candy.jpg','../music/candy.mp3')">내귀에 캔디</a></li>
+			<li><a href="javascript:loadMusic('../music/gangnamstyle.jpg','../music/gangnamstyle.mp3')">강남스타일</a></li>
+		</ol>
+	</div>
+
+	<script>
+
+		function loadMusic(jpg,mp3){
+			// alert(jpg);
+			// alert(mp3);
+			document.getElementById("poster").src=jpg; //"jpg"로 받으면 문자열..!
+			document.getElementById("audio1").src=mp3;
+
+			audio1.autoplay();	//자동플레이시키는함수
+		};//loadMusic()
+
+	</script>
+	
+</body>
+</html>

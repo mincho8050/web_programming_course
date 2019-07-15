@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>20_다양한selector.html</title>
+<style>
+
+	div > p{
+		background-color: red;
+	}
+
+	div>span>p{
+		background-color:blue;
+	}
+	#menu{width: 100px;height: 100px;background-color: gray;}
+	.hide{display: none;}
+
+	#navi{
+		background-color: white;margin:auto;
+		width: 300px;height: 300px;
+	}
+	#navi>ul{list-style: none;}
+	#navi>ul>li>a{width: 200px;height: 100px;
+					}
+	#navi>ul>li:first-child>a{
+		color: #D81414;
+	}
+	#navi>ul>li:nth-child(3){
+		color: #D98D02;
+	}
+
+	ul.a {
+	  list-style-type: circle;
+	}
+
+	ul.b {
+	  list-style-type: square;
+	}
+
+	ol.c {
+	  list-style-type: upper-roman;
+	}
+
+	ol.d {
+	  list-style-type: lower-alpha;
+	}
+
+	/** <a>의 상세 선택자 */
+	a:link{color: black;text-decoration: none;}
+	a:visited{color: black;text-decoration: none;}
+	a:hover{color: black;text-decoration: underline;}
+	a:active{color: black;text-decoration: none;}
+
+/*
+CSS Selector 
+- https://www.w3schools.com/cssref/css_selectors.asp
+
+ */
+		
+</style>
+
+</head>
+<body>
+
+	<p>무궁화</p>
+
+	<div>
+		<p>개나리</p>
+	</div>
+	
+	<div>
+		<span>
+			<p>진달래</p>
+		</span>
+	</div>
+
+	<hr>
+
+	<div id="menu">
+		<ol class="hide">
+			<li>국어</li>
+			<li>영어</li>
+			<li>수학</li>
+		</ol>
+	</div>
+
+	<hr>
+
+	<div id="navi">
+		<h1 class="hide">주요메뉴</h1>
+		<ul>
+			<li><a href="http://www.daum.net">정치</a></li>
+			<li><a href="http://www.daum.net">경제</a></li>
+			<li>사회</li>
+			<li>연예</li>
+		</ul>
+	</div>
+
+	<hr>
+	<p>Example of unordered lists:</p>
+	<ul class="a">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Coca Cola</li>
+	</ul>
+
+	<ul class="b">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Coca Cola</li>
+	</ul>
+
+	<p>Example of ordered lists:</p>
+	<ol class="c">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Coca Cola</li>
+	</ol>
+
+	<ol class="d">
+	  <li>Coffee</li>
+	  <li>Tea</li>
+	  <li>Coca Cola</li>
+	</ol>
+
+
+	
+</body>
+</html>

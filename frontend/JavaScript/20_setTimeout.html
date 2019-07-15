@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>20_setTimeout.html</title>
+	<style></style>
+</head>
+<body>
+
+
+	<script>
+
+		/*
+			자주 쓰이고 중요한 함수 ★★★★★
+			주어진 시간에 따라 자동으로 함수 호출
+			시간 : 1000 ms = 1 second.
+			setInterval("함수명()",시간) : 주기적으로 호출
+			setTimeout(함수명,시간)		: 한번만 호출
+
+			시간해제 : clearInterval()
+					  clearTimeout()
+		 */
+		
+		//3초마다 반복적으로 경고창 호출
+		// setInterval(function(){alert("Hello")},3000);
+		
+		//3초 후에 경고창을 한 번만 호출
+		// setTimeout(function(){alert("Hello")},3000);
+		
+		/*
+			function test(){
+				setTimeout(test,3000);
+			}
+			> setInterval()과 똑같음
+			> 재귀적 함수 호출관계를 이용해서 3초마다 주기적으로 test함수 호출
+		 */
+		
+		
+
+	</script>
+	
+</body>
+</html>
