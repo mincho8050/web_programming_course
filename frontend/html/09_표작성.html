@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>09_표작성.html</title>
+ </head>
+ <body>
+  
+
+	<!-- 셀 합치기
+		-가로 colspan
+		-세로 rowspan
+	-->
+	
+	<TABLE border=1 width="200">
+		<!-- 만약 칸수가 맞지 않으면 어그러진다. -->
+		<tr>
+			<td colspan="2">가</td> <!-- 가로2칸 합치기 -->
+			<td>나</td>
+		</tr>
+		<tr>
+			<td>다</td>
+			<td>라</td>
+			<td>마</td>
+		</tr>
+		<tr>
+			<td colspan="3">사</td> <!-- 가로3칸 합치기 -->
+		</tr>
+	</TABLE>
+
+	<hr>
+
+	<table border="1" width="300">
+		<tr>
+			<td rowspan="2">가</td> <!-- 세로2줄합치기 -->
+			<td>나</td>
+			<td>다</td>
+		</tr>
+		<tr>
+			<td>라</td>
+			<td rowspan="2">마</td>
+		</tr>
+		<tr>
+			<td>사</td>
+			<td>아</td>
+		</tr>
+	</table>
+
+
+
+ </body>
+</html>

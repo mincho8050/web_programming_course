@@ -1,0 +1,32 @@
+/** mystyle.css  */
+
+*{
+	font-family: "굴림체",arial,"Times New Roman", Times, serif;
+	font-size: 20px;
+
+}
+
+body{
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	line-height: 10px;
+}
+img{border: none;}
+table{border:none;}
+tr{background-color: #E40C0C;}
+
+.line{
+	border: 1px solid #C400FF;
+}
+#myLayer{
+	width: 200px;
+	height: 200px;
+	background: #42C3D0;
+}
+
+	a:link{color: black;text-decoration: none;}
+	a:visited{color: black;text-decoration: none;}
+	a:hover{color: black;text-decoration: underline;}
+	a:active{color: black;text-decoration: none;}

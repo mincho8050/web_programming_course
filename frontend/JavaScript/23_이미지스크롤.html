@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>23_이미지스크롤.html</title>
+	<style>
+		
+		#myfilm{
+			position: absolute;
+			left: 30%;
+			top: 10px;
+			width: 270px;
+			height: 100px;
+			background-color: #fff;
+			overflow: hidden;
+			border: 1px solid #000;
+		}
+
+	</style>
+	<script>
+
+		//1) 스크롤 하고자 하는 이미지를 전역변수에 대입
+		var ctnt=[];	//배열선언
+		ctnt[0]="<img src='../images/crying.png' width='85'>";
+		ctnt[1]="<img src='../images/devil.png' width='85'>";
+		ctnt[2]="<img src='../images/face-glasses.png' width='85'>";
+		ctnt[3]="<img src='../images/face-grin.png' width='85'>";
+		ctnt[4]="<img src='../images/face-kiss.png' width='85'>";
+		ctnt[5]="<img src='../images/face-plain.png' width='85'>";
+		ctnt[6]="<img src='../images/face-sad.png' width='85'>";
+		ctnt[7]="<img src='../images/face-smile.png' width='85'>";
+
+
+		//2) 1)에서 준비한 이미지를 id=myfilm에 배치하기
+		function start(){
+			// document.write("<div id='area0' style='position:absolute;top:0px;left:0px'>");
+			// document.write(ctnt[0]);
+			// document.write("</div>");
+			// document.write("<div id='area1' style='position:absolute;top:0px;left:90px'>");
+			// document.write(ctnt[1]);
+			// document.write("</div>");
+			
+			// eval()를 이용한 경우
+			// > document.write(eval("\"<div id=\'area"+idx+"\' style=\'position:absolute;top:0px;left:"+(idx*90)+"px\'>\""));
+			for(idx=0;idx<ctnt.length;idx++){
+				document.write("<div id='area"+idx+"' style='position:absolute;top:0px;left:"+(idx*90)+"px'>");
+				document.write(ctnt[idx]);
+				document.write("</div>");
+
+			}
+
+			//3) 3초 후에 scroll함수 1번 호출
+			setTimeout(scroll,3000);
+
+		}//start()
+
+		var img_w=90;//이미지 길이를 변수처리해줌.원래 85px인데 배치할때는 90px로 줬기 때문.
+
+		//4) 이미지 스크롤
+		function scroll(){
+			// alert("scroll함수 호출!");
+			// alert(document.getElementById("area0").style);
+			// alert(document.getElementById("area0").style.left);
+			
+			//id=area0의 왼쪽여백값을 가져와서 -10px만큼 줄임
+			// var tmp=document.getElementById("area0").style;
+			//parseInt로 정수로 변환 후 계산한다
+			// tmp.left=parseInt(tmp.left)-10+"px";
+			
+			//5) id=area0~id=area7까지 동시에 왼쪽 여백 줄임
+			for(idx=0;idx<ctnt.length;idx++){
+				var tmp=document.getElementById("area"+idx).style;
+				tmp.left=parseInt(tmp.left)-10+"px";
+
+				//7) 이미지 순환
+				if(parseInt(tmp.left)<=-img_w){
+					tmp.left=(ctnt.length-1)*90+"px";
+				}
+				
+
+			}
+
+			//6) 0.5초마다 scroll함수 호출
+			timer=setTimeout(scroll,150);
+
+		}//scroll()
+
+		var timer;
+
+		function killtime(){
+			clearTimeout(timer);
+		}//killtime()
+
+	</script>
+</head>
+<body onunload="killtime()">
+
+	<!-- 이미지가 스크롤되는 위치 -->
+	<div id="myfilm">
+		<script>start();</script>
+	</div>
+	
+	
+</body>
+</html>

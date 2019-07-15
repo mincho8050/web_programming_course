@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>24_BOM.html</title>
+	<style></style>
+</head>
+<body>
+
+	<script>
+
+		/*
+			The Browser Object Model (BOM)
+			 > window , document , location , history ~
+			 	> window.alert()		> 확인
+				  window.confirm()	    > 확인/취소
+				  document.write()	    > <body>영역에 출력
+				  location.href		    > 페이지 이동
+			 일반적 기능 객체 : Number , Math , Date ~
+		 */
+		
+		//1) window.open() : 새창 만들기
+		//> 부모창과 자식창이 서로 독립적 관계이다.
+		//> (window생략가능) window.open("URL또는파일명","창이름","옵션")
+		//> window.close() : 창닫기
+		// window.open("blank.html","win","width=350,height=300");
+		/*
+			modal창
+			> 부모창과 자식창을 한몸으로 하고자 하는 경우 사용
+			> Bootstrap3 Modal Plugin을 활용할 것
+		 */
+		
+		//2)프린터 대화상자 불러오기
+		//window.print(); 
+		
+/*		
+		//3)확인true , 취소false
+		if (confirm("영구히 삭제됩니다\n지울까요?")) {
+			alert("삭제됐습니다.");
+		}else{
+			alert("취소됐습니다");
+		}
+
+*/
+
+		//4) device의 해상도 확인
+		// alert(screen.width);	//1920
+		// alert(screen.height);	//1080
+		
+		//5) 페이지 이동
+		//window.location.href="URL또는파일명"
+		//location=""
+		// location.href="http://www.soldesk.com";
+		// location.reload();	//현재 페이지 새로고침
+		
+		//6)뒤로,앞으로
+		// history.back();	//뒤로
+		// history.forward();	//앞ㅇ로
+		// history.go(-2);
+		
+		//7)쿠키
+		//> document.cookie
+		//> 웹서버가 사용자에게 저장하는 텍스트 형태의 정보
+		//> 웹브라우저의 양향을 받는다
+		//> 예) 아이디저장, 오늘창그만보기
+
+	</script>
+	
+</body>
+</html>

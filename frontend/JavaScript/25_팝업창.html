@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>25_팝업창.html</title>
+  <style></style>
+ </head>
+ <script>
+ function getCookie(name) { 
+   var nameOfCookie = name + "="; 
+   var x = 0; 
+   while ( x <= document.cookie.length ) 
+   { 
+     var y = (x+nameOfCookie.length); 
+     if ( document.cookie.substring( x, y ) == nameOfCookie ) { 
+       if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
+       endOfCookie = document.cookie.length; 
+       return unescape( document.cookie.substring( y, endOfCookie ) ); 
+     } 
+     x = document.cookie.indexOf( " ", x ) + 1; 
+     if ( x == 0 ) break; 
+   } 
+   return ""; 
+  }//getCookie() end
+
+  //팝업창 띄우기
+  //->popcookie값이 done이 아니면 즉(체크하지 않았으면)
+  if(getCookie("popcookie")!="done"){
+       window.open("popup.html", 
+                   "popwin", 
+	  	  	       "width=300, height=350");
+  }//if end
+
+ </script>
+ <body>
+  <h1>팝업창 연습</h1>
+ </body>
+</html>
