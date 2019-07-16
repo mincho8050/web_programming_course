@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>29_text_html.html</title>
+	<style>
+		#text,#html{
+			width: 250px;
+			height: 100px;
+			border: 1px solid #333;
+			margin-bottom: 40px;
+		}
+	</style>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+	<p>
+		<button>입력!!</button>
+	</p>
+	<hr>
+	<div id="text"></div>
+	<div id="html"></div>
+
+	<script>
+		$("button").click(function() {
+			// alert("버튼클릭");
+			var txt="<img src='../images/k7.png'>"
+			//javascript
+			// document.getElementById("html").innerHTML=txt;
+			
+			//jQuery
+			//단순 문자열 출력
+			$("#text").text(txt); //<img src='../images/k7.png'>
+
+			//문자열이 마크업되면서 출력(요소생성)
+			$("#html").html(txt); //이미지출력
+
+		});//click
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>28_jquery회원가입.html</title>
+	<style>
+	</style>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+	<h1>회원가입</h1>
+
+	<form name="memfrm" id="memfrm">
+		아아디:<input type="text" name="uid" id="uid" placeholder="아이디를 입력하세요">
+		<hr>
+		<button id="btn_idcheck">ID중복확인</button>
+		<button id="btn_join">회원가입</button>
+		<button id="btn_reset">다시쓰기</button>
+	</form>
+
+	<script>
+		//jQuery 이벤트
+		//둘 다 많이 쓰임
+		//$("선택자").on("이벤트",function(){});
+		//$("선택자").이벤트();
+		// $("#btn_idcheck").on('click', function(){});
+		$("#btn_idcheck").click(function() {
+			window.open("blank.html","idwin","width=250,height=200");
+		});//click
+
+		$("#btn_join").click(function() {
+			var uid=$("#uid").val();
+			uid=uid.trim(); //공백제거
+			if(uid.length<8||uid.length>=13){
+				alert("아이디 8~12내에서 입력하세요");
+				$("#uid").focus();
+				//<input type=submit> 서버로 폼 전송
+				//<button>의 기본 속성도 submit
+				return false;
+			}
+
+			//JavaScript
+			// document.memfrm.submit(); //type=submit 과 동일기능
+			//jquery
+			$("#memfrm").submit();  //type=submit 과 동일기능
+
+		});//
+
+		$("#btn_reset").click(function() {
+			//type=reset과 동일한 기능
+			// document.memfrm.reset();//javascript
+			$("memfrm").reset(); //jquery
+		});//
+		
+	</script>
+	
+</body>
+</html>

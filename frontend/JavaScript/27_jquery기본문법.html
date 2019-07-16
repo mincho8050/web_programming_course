@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>27_jquery기본문법.html</title>
+	<style></style>
+
+	<!-- jquery import -->
+	<script src="../js/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+
+	<form name="memfrm">
+		<input type="text" name="uid" id="uid" value="soldesk">
+	</form>
+
+	<script>
+		//<body>본문에 있는 value=soldesk 에 접근
+		
+		//1)JavaScript
+		//name=uid
+		alert(document.memfrm.uid.value); //soldesk
+		//id=uid
+		alert(document.getElementById("uid").value);//soldesk
+
+		//2)jQuery
+		alert($("#uid").val()); //soldesk
+	</script>
+	
+</body>
+</html>
