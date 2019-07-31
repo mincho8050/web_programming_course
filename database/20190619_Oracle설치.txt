@@ -1,0 +1,255 @@
+NCS - 응용SW 기초 기술 (필수)
+
+[컴원미디어]
+Chapter 2. 데이터베이스 설계와 DB서버
+Chapter 3. SQL*Plus 사용법
+
+
+
+[데이터베이스]
+관계형 데이터베이스(RDB) : Oracle DB, MySQL
+- SQL문이 필요
+
+NoSQL 데이터베이스       : MongoDB
+- SQL문이 없다
+
+
+
+
+
+[Oracle DB Server 구축하기]
+
+ ※주의사항
+ -> 컴퓨터이름이 한글이면 설치가 용이하지 않을 수 있다
+
+
+
+[Oracle 11g]
+
+무료 배포 버전 -> 로그인 후 다운로드 가능
+
+https://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
+-> Oracle Database 11g Release 2 Express Edition for Windows 64
+-> OracleXE112_Win64.zip
+
+
+
+[오라클 서버 삭제]
+-> 제어판
+-> 프로그램 및 기능
+-> Oracle Database 11g Express Edition -> 우클릭
+-> 제거
+
+
+
+[오라클 서버 서비스 확인]
+시작 -> 서비스 검색
+
+또는
+
+시작
+-> 모든프로그램 
+-> Oracle Database 11g Express Edition
+-> Start Database / Stop Database
+
+
+[오라클 명령어 입력 툴]
+
+- 데이터베이스 관련 명령어
+  -> SQL문 (Stored Query Language)
+  -> 대소문자를 구분하지 않음
+  -> 종결문자 ;
+  -> ANSI(표준)와 자신만의 DB명령어
+
+1) Oracle SQL Developer
+2) 시작
+   -> 모든프로그램 
+   -> Oracle Database 11g Express Edition
+   -> Run SQL Command Line
+      SQL>connect
+          아이디
+          비번(화면에 안보임)
+
+3) 시작 -> cmd
+   -> 
+
+
+[테이블 스페이스 생성]
+
+- 데이터베이스 생성 : My-SQL, Maria DB, MS-SQL
+  -> create database DB명
+
+- 테이블 스페이스 생성 : Oracle DB
+  형식)
+      create tablespace 테이블스페이스이름
+      datafile '데이터파일경로' size 초기사이즈
+      autoextend on
+      next 자동증가사이즈
+      maxsize 최대사이즈;
+  
+      create tablespace java0514
+      datafile 'd:\java0514\java0514.dbf' size 50m
+      autoextend on
+      next 10m
+      maxsize unlimited;
+
+
+
+[오라클 DB 서버 사용자 계정 만들기]
+
+  create user 아이디 identified by 비번
+  default tablespace 테이블스페이스이름;
+
+  create user java0514 identified by 1234
+  default tablespace java0514;
+
+
+[사용자 계정 삭제]
+  
+  drop user java0514 cascade;
+
+
+
+[사용자 권한 부여]
+- connect  : 로그인 권한
+- resource : 자원을 사용할 수 있는 권한
+- dba      : db 관리자 권한
+  grant connect, resource, dba to java0514;
+
+
+[테이블 생성]
+
+- Schema(스키마)
+- 데이터베이스 저장 단위
+
+  성적 -> 테이블명
+  -------------------------------
+  번호 이름   국어 영어 수학 평균
+  -------------------------------
+  1    무궁화  90   80   70   80    -> 줄row, record
+  2    개나리  90   80   70   80  
+
+  칼럼column
+
+  create table 테이블명(
+     칼럼1 자료형 제약조건,
+     칼럼2 자료형 제약조건,
+     칼럼3 자료형 제약조건
+  );
+
+  create table sungjuk(
+     sno int,            --숫자형
+     uname varchar(10),  --문자열형 ' '
+     kor int,
+     eng int,
+     mat int,
+     aver int
+  );
+
+  
+[테이블 삭제]
+  
+  drop table 테이블명; 
+  drop table sungjuk;
+
+
+[행추가] - create
+  
+  insert into 테이블명(칼럼1, 칼럼2 ~)
+  values(값1, 값2 ~);
+
+  insert into sungjuk(sno, uname, kor, eng, mat)
+  values(1, '무궁화', 80, 90, 75);
+
+  insert into sungjuk(sno, uname, kor, eng, mat)
+  values(2, '개나리', 40, 30, 75);
+
+  insert into sungjuk(sno, uname, kor, eng, mat)
+  values(3, '라일락', 100, 90, 95);
+
+  --칼럼명이 생략되어 있으면 values()안에
+    칼럼순서대로 모든 칼럼에 값을 넣어야 한다
+  insert into sungjuk
+  values(sno값, uname값, kor값, eng값, mat값, aver값);
+
+
+[조회 및 검색] - Read
+
+  select 칼럼1, 칼럼2, ~ from 테이블명
+
+  select sno, uname from sungjuk;
+  select sno, uname, kor, eng, mat from sungjuk;
+  select * from sungjuk; --전체 모든 칼럼 조회
+
+
+[행수정] - Update
+  
+  update 테이블명 set 칼럼1=값1, 칼럼2=값2, ~  
+  
+  update sungjuk set aver=(kor+eng+mat)/3;
+
+
+
+[행삭제] - Delete
+
+  delete from 테이블명;
+
+  delete from sungjuk;
+
+
+[연습]
+ 
+ NCS 학습모듈 - 응용SW 기초 기술 활용
+ 참조!!
+
+ 36페이지
+ -> <표 2-7> 참조해서 address 테이블 생성
+
+ 39페이지
+ -> [그림 2-8] 참조해서 행추가 하세요
+
+
+
+select * from address;
+select count(*) from address;
+
+create table address(
+  address1     varchar(255),
+  address2     varchar(255),
+  address3     varchar(255),
+  postal_code  varchar(255),
+  client_id    varchar(255)
+);
+
+
+insert into address
+values('서울특별시','강남구 삼성동 44번지','A아파트 1동 1호','50693','321');
+
+insert into address
+values('경기도','성남시 분당구 정자동 66번지','B아파트 5동 1호','12301','441');
+
+insert into address
+values('서울특별시','강남구 삼성동 64길','C아파트 3동 1호','50693','216');
+
+insert into address
+values('경기도','성남시 분당구 정자동 44길','D아파트 5동 1호','12301','435');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
