@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>16_날짜자동생성.html</title>
+</head>
+<body>
+
+	<select id="year"></select>년
+	<select id="month"></select>월
+	<select id="date"></select>일
+
+<script src="js/jquery.js"></script>
+<script src="js/moment-with-locales.js"></script>
+<script>
+	//날짜데이터 자동 생성
+	
+	//최초로 함수 한번만 호출
+	createYearMonth();
+	
+	function createYearMonth(){
+		//1)1월~12월 생성 후 추가
+		for(m=1;m<=12;m++){
+			
+			$("<option>").text(m).appendTo("#month");	
+		}//for
+		
+		//2)현재년도-5년 ~ 현재년도+5년까지 출력
+		var nowYear=moment().year();
+		for(y=nowYear-5;y<=nowYear+5;y++){
+			
+			//3)현재년도를 미리 selected
+			if(y==nowYear){
+				/* 
+				방법1)
+				$("<option>").text(y)
+							 .attr("selected","selected")
+							 .appendTo("#year"); 
+				*/
+				//방법2)
+				$("<option>").text(y)
+				 .prop("selected",true)
+				 .appendTo("#year"); 
+	
+			}else{
+				$("<option>").text(y).appendTo("#year");
+			}
+
+		}//for
+		
+		//4)'일'생성하는 함수 호출
+		createDate();
+
+	}//createYearMonth
+	
+	
+	
+	function createDate(){
+		//text() : 일반적인 요소의 문자열값 얻어올 때
+		//val() : <input> <select> <textarea>등의 
+		//		  폼과 관련된 값(컨트롤 요소)얻어올 때
+		
+		//5)기존 '일' 출력된 값 지우기
+		//이렇게 지우지 않고 시작하면 계속 append되서 출력됨
+		$("#date").empty();
+		
+		//6)목록에서 사용자가 선택한 년도 얻어옴
+		var year=$("#year").val();
+		
+		//7)목록에서 사용자가 선택한 월 얻어옴
+		var month=$("#month").val();
+		
+		//8)endOf() : moment.js에서 해당월의 마지막일을 얻어옴
+		var endDay=moment(year+"-"+month).endOf("month").date();
+		//alert(endDay);
+		
+		//9)'일'추가
+		for(d=1;d<=endDay;d++){
+			$("<option>").text(d).appendTo("#date");
+		}
+		
+	}//createDate
+	
+	//10)사용자가 년,월을 변경했을때(이벤트가 발생)
+	//'일'을 바꾸는 함수를 호출
+	$("#year, #month").change(createDate);
+	//$("#date").empty();를 안하면 계속 월을 바꿀때마다 일이 추가되서 나옴
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script src="js/jquery.js"></script>
+<title>text_html메서드</title>
+<style type="text/css"> 
+	#text,#html {
+		width:250px;
+		height:100px;
+		border:1px solid #333;
+		margin-bottom:40px;
+	}
+</style>
+</head>
+<body>
+	<p>
+		<button>입력!</button>
+	</p>
+	<div id="text"></div>
+	<div id="html"></div>
+	
+	
+	<script>
+		$("button").click(function(){
+			var txt="<img src='img/k7.png'>";
+			
+			//단순 문자열 출력
+			$("#text").text(txt); //단순하게 <img src='img/k7.png'> 이렇게 나옴
+			
+			//문자열이 마크업되면서 출력(요소생성)
+			$("#html").html(txt);
+			//javascript
+			//document.getElementById("html").innerHTML=txt;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		});
+	</script>
+	
+	
+	
+
+
+</body>
+</html>

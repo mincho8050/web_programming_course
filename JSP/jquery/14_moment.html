@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>14_moment.html</title>
+</head>
+<body>
+
+	<h1 id="time"></h1>
+	<!-- 
+	자바스크립트 기반 오픈소스(외부라이브러리)
+	jquery.js
+	moment.js
+	bootstrap.js
+	angular.js
+	node.js
+	 -->
+<script src="js/jquery.js"></script>
+<script src="js/moment-with-locales.js"></script>
+<script>
+	//moment.js
+	//자바스크립트의 내장객체 Date()의 복잡성을 단순, 다양하게 사용하기 위한
+	//자바스크립트기반 오픈소스
+	
+	//1)JavaScript
+	/* var now=new Date();
+	var year=now.getFullYear();
+	var month=now.getMonth()+1;
+	var date=now.getDate();
+	var hour=now.getHours();
+	var min=now.getMinutes();
+	var sec=now.getSeconds();
+	
+	var fullDate="";
+	fullDate+=year+"년"+month+"월"+date+"일";
+	fullDate+=hour+"시"+min+"분"+sec+"초";
+	$("#time").text(fullDate);
+	
+	 */
+	 
+	 
+	 //2)moment.js오픈소스 활용해서 출력하기
+	 var now=moment(); //moment.js 라이브러리 시작
+	 
+	 moment.locale("ko"); //한글날짜 형식으로 지정
+	 var fullDate=now.format("YYYY년MM월DD일 hh시mm분ss초");
+	 $("#time").text(fullDate);
+	 
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
