@@ -12,11 +12,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/myscript.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+  
+  <!-- 글씨체 -->
+ <link href="https://fonts.googleapis.com/css?family=Bad+Script|Noto+Sans+KR&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<!-- 메인 카테고리 -->
+<!-- 메인카테고리 -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -25,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="<%=request.getContextPath() %>/index.jsp">HOME</a>
+      <a class="navbar-brand" href="#">ReVeluv</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -36,71 +42,69 @@
         <li><a href="./mail/mailForm.jsp">메일보내기</a></li>
         <li><a href="./bbs2/bbslist.do">게시판(MVC)</a></li>
         <li><a href="./member2/loginform.do">로그인(MVC)</a></li>
+
       </ul>
     </div>
   </div>
 </nav>
-<!-- 메인 카테고리끝 -->
-
+<!-- 메인카테고리끝 -->
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-  <img src="images/t03.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <img src="images/rv_logo.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
 </div>
 
-<!-- Container 시작 -->
-	<div class="container-fluid bg-3 text-center">
-		<div id="masterhead">
-		<div class="container">
-		<div class="slideshow">
-		<div id="slideshow" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-		<div class="item active">
-			<img class="img-responsive" src="images/t01.jpg">
-		<div class="container">
-		<div class="carousel-caption">
-		</div>
-		</div>
-		</div><!-- /. Item Active -->
-		<div class="item">
-			<img class="img-responsive" src="images/t10.jpg" alt="Second Slide">
-		<div class="container">
-		<div class="carousel-caption">
-		</div>
-		</div>
-		</div><!-- /. Item -->
-	<div class="item">
-		<img class="img-responsive" src="images/t07.jpg" alt="Third slide">
-	<div class="container">
-	<div class="carousel-caption">
-	</div>
-	</div>
-	</div><!-- /. Item -->
-	</div><!-- /. Carousel-Inner -->
-	<div class="controlsBlock">
-	<div class="controls">
-		<a class="left carousel-control" href="#slideshow" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-	 	<a class="right carousel-control" href="#slideshow" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-	<!--<a class="left carousel-control" href="#slideshow" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-	 <a class="right carousel-control" href="#slideshow" data-slide="next"><i class="fa fa-chevron-right"></i></a>-->
-	<div class="carousel-indicators">
-		<li data-target="#slideshow" data-slide-to="0" class="active"></li>
-		<li data-target="#slideshow" data-slide-to="1"></li>
-		<li data-target="#slideshow" data-slide-to="2"></li>
-	</div>
-	</div>
-	</div>
-	</div><!-- /# Slideshow .Carousel -->
-	</div><!-- /. Slideshow -->
-	</div><!-- /. Container -->
-	</div><!-- /# Mastehead -->
-	</div>
-<!-- Container 끝 -->
+
+<!-- Third Container (Grid) -->
+<!-- <div class="container-fluid bg-3 text-center"> -->
+<div class="container-fluid bg-3 text-center">
+	<h2 class="title_video">Red Velvet Music Video</h2>
+	
+	<a href="https://www.youtube.com/watch?v=JFgv8bKfxEs" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv01.jpg" class="img-fluid img-thumbnail">
+	</a>
+	
+	 <a href="https://www.youtube.com/watch?v=XGdbaEDVWp0" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv02.jpg" class="img-fluid img-thumbnail">
+	</a>
+
+	<a href="https://www.youtube.com/watch?v=J0h8-OTC38I" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv03.jpg" class="img-fluid img-thumbnail">
+	</a>
+	
+	<a href="https://www.youtube.com/watch?v=QslJYDX3o8s" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv04.jpg" class="img-fluid img-thumbnail">
+	</a>
+	
+	<a href="https://www.youtube.com/watch?v=WyiIGEHQP8o" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv05.jpg" class="img-fluid img-thumbnail">
+	</a>
+	
+	<a href="https://www.youtube.com/watch?v=aiHSVQy9xN8" data-toggle="lightbox" data-gallery="youtubevideos" class="col-sm-4">
+	    <div class="overlay"></div>
+	    <img src="images/a_rv06.jpg" class="img-fluid img-thumbnail">
+	</a>
+	
+	
+
+</div>
+
+
+<!--  -->
+
+<!-- 끝 -->
+
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+  <p>Red Velvet</p> 
 </footer>
 
 </body>
 </html>
+

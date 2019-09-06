@@ -2,30 +2,73 @@
 /* mystyle.css */
 @CHARSET "UTF-8";
 
+
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
   }
-  .logo{width: 130px;height: 50px;}
+	/* 
+	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Bad Script', cursive;
+	 */
+/* 홈로고, 풋터글씨체  */
+  .navbar-brand,.bg-4{
+  	font-family: 'Bad Script', cursive;
+  	font-weight: bold;}
+  /* 메인 비디오메뉴 */
+  .title_video{
+  		font-family: 'Bad Script', cursive;
+  		font-size: 40px !important;
+  		font-weight:bold;
+  		margin-bottom:20px !important;
+  		color:#e08585 !important;} /* h2 */
+  .col-sm-4{padding:20px 0 20px 0;}
+  .col-sm-4 > img{max-width: 100%;}
+  .col-sm-4 > img:hover{
+		transform:scale(1.1) !important;
+		transition: all 0.3s ease-in-out;
+		 }
+  
+  /* 각 페이지마다 글제목 */
+  .container > h3{font-family: 'Noto Sans KR', sans-serif !important;}
+  h3{color:#e08585 !important;margin-bottom: 20px !important;}
+  /* 테이블 제목은 left , 다른건 center */
+  .list{text-align: left !important; padding: 8px;}
+  .table th{text-align: center;
+		  opacity:1 !important;}
+  /* 페이지마다 이동링크 */	 
+  .link{font-family: 'Bad Script', cursive !important;font-weight: bold;}
   p {font-size: 16px;}
-  .margin {margin:35px 0 35px 0;}
+  .link{margin-bottom: 20px !important;}
+  .margin {margin: 80px 0 80px 0;}
+  
+  /* 링크클릭 */
+  a:link { color: black; text-decoration: none !important;}
+  a:visited { color: black; text-decoration: none !important;}
+  a:hover { color: #ff6666 !important; text-decoration: none !important;}
+  input:focus,textarea{outline:none;}
+  
+
+  /* 메인 배경들 */
   .bg-1 { 
-    background-color: #ffeecc; 
+    background-color:#ffcccc; 
     color: #ffffff;
   }
   .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #474e5d; /* Dark Blue -안씀 */
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: #ffffff; /* White , 사용중*/
     color: #555555;
-  }
+    margin:70px 0 70px 0;
+      }
   .bg-4 { 
-    background-color: #4d3300; /* Black Gray */
+    background-color: #e08585; 
     color: #fff;
   }
+
   .container-fluid {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -40,10 +83,42 @@ body {
     letter-spacing: 5px;
   }
   .navbar-nav  li a:hover {
-    color: #cc8800 !important;
+    color: #ff6666 !important;
   }
-  .text-center > p{padding-top: 10px;}
+  
+  .navbar-default{margin: 0 !important;}
+  
+
+  footer>p{padding-top: 10px;}
   
   
-  /* ------------------------------------------ */
+  /* 각 페이지별 iuput type들 */
+  input[type="button"],input[type="submit"],input[type="reset"]{
+  		border:none !important; 
+  		margin: 0 10px 0 10px;
+  		padding:5px 7px;
+  		border-radius:10px;
+  		background-color: white !important;}
+ input[type="button"]:hover,input[type="submit"]:hover,input[type="reset"]:hover{
+ 	color: #ff6666 !important;
+ }
+ .form_input{width:60%;}
+ 
+  
+/* --------------글쓰기창---------------------------- */
+
+.table-hover td{text-align: left;}
+.table-hover:last-child{text-align: center !important;}
+
+
+/* ----상세보기---- */
+.readTable tr{border-color: #ffcccc !important;}
+.readTable th{width: 25%;}
+.read_content{height: 300px !important; padding-top:20px !important;text-align: left;}
+
+
+/*----비밀번호창-----  */
+.pass_input{height: 100px !important; padding-top:30px !important;}
+
+
 
