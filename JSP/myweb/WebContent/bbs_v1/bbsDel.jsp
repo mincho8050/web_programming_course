@@ -7,15 +7,12 @@
 <div class="container">
 
 <h3>게시글 삭제</h3>
-<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
+<p class="link"><a href="bbsList.jsp">List</a></p>
 
 <form method="post" 
 	  action="bbsDelProc.jsp"
 	  onsubmit="return pwCheck(this)">
-	  <!-- 페이지유지를 위해 col,word값도 넘겨준다 -->
 	<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
-	<input type="hidden" name="col" value="<%=col%>">
-	<input type="hidden" name="word" value="<%=word%>">
 	<table class="table">
 		<tr>
 			<th>비밀번호</th>

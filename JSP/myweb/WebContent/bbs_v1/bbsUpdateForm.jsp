@@ -6,7 +6,7 @@
 
 <div class="container">
 	<h3>게시글 수정</h3>
-	<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
+	<p class="link"><a href="bbsList.jsp">List</a></p>
 	
 	<%
 	String passwd=request.getParameter("passwd").trim();
@@ -28,9 +28,7 @@
 		  onsubmit="return bbsCheck(this)">
 		
 		<input type="hidden" name="bbsno" value="<%=bbsno%>">
-		<input type="hidden" name="col" value="<%=col%>">
-		<input type="hidden" name="word" value="<%=word%>">
-		
+		  
 		<table class="table table-hover">
 			<tr>
 				<th>작성자</th>

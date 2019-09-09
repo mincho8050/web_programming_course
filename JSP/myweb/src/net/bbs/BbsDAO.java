@@ -41,8 +41,8 @@ public class BbsDAO {
 	}//insert
 	
 	
-	
-	 public ArrayList<BbsDTO> list(){
+	//1)전체리스트
+	public ArrayList<BbsDTO> list(){
 			//DB에서 가져온 데이터를 list에서 모아서
 			//sungjukList.jsp에 전달한다.
 			ArrayList<BbsDTO> list=null;
@@ -70,21 +70,72 @@ public class BbsDAO {
 						list.add(dto);
 					}while(rs.next());//do~while
 					
-				}else{
-					//이걸 넣지 않아도 되지만, 그래도 넣어주는게 좋음.
-					list=null;
-				}//if
+				}
 				
 			}catch(Exception e){
 				System.out.println("게시글 목록 읽어오기 실패 : "+e);
 			}
 			
 			return list;
-		}//list 
+		}//list 1
+	
 	 
+	//2) 검색리스트 
+	public ArrayList<BbsDTO> list(String col, String word){
+		
+		ArrayList<BbsDTO> list=null;
+		try{
+            Connection con=DBOpen.getConnection();
+            StringBuilder sql=new StringBuilder();
+            sql.append(" SELECT bbsno, wname, subject, readcnt, regdt, indent");
+			sql.append(" FROM tb_bbs ");
+            
+            if(word.trim().length()>=1){ //검색어 있다면?
+                String search="";
+                if(col.equals("wname")){
+                    search+=" WHERE wname LIKE '%" + word + "%' ";
+                }else if(col.equals("subject")){
+                    search+=" WHERE subject LIKE '%" + word + "%' ";
+                }else if(col.equals("content")){
+                    search+=" WHERE content LIKE '%" + word + "%' ";
+                }else if(col.equals("subject_content")){
+                    search+=" WHERE subject LIKE '%" + word + "%' ";
+                    search+=" OR content LIKE '%" + word + "%' ";
+                }//if end
+                sql.append(search);
+            }//if end            
+            
+            sql.append(" ORDER BY grpno DESC, ansnum ASC");
+			
+			
+			PreparedStatement pstmt=con.prepareStatement(sql.toString());
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()){
+				list=new ArrayList<BbsDTO>(); //전체저장
+				do{
+					BbsDTO dto=new BbsDTO(); //한줄저장
+					dto.setBbsno(rs.getInt("bbsno"));
+					dto.setSubject(rs.getString("subject"));
+					dto.setReadcnt(rs.getInt("readcnt"));
+					dto.setWname(rs.getString("wname"));
+					dto.setRegdt(rs.getString("regdt"));
+					dto.setIndent(rs.getInt("indent"));
+					list.add(dto);
+				}while(rs.next());//do~while
+				
+			}
+			
+		}catch(Exception e){
+			System.out.println("검색 실패 : "+e);
+		}
+		
+		return list;
+	}//list 2
+	
+	
 	 
 	
-	 public BbsDTO read(int bbsno){
+	public BbsDTO read(int bbsno){
 		 	BbsDTO dto=null;
 			
 			try{

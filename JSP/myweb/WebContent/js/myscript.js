@@ -2,7 +2,7 @@
 
 
 
-
+//게시판 유효성 검사
 function bbsCheck(f) {
 	//게시판 유효성 검사
 	
@@ -48,6 +48,7 @@ function bbsCheck(f) {
 }//bbsCheck
 
 
+//비밀번호 검사
 function pwCheck(f){
 	//비밀번호가 4글자 이상 입력되었는지 검사
 	var passwd=f.passwd.value;
@@ -69,12 +70,23 @@ function pwCheck(f){
 }//pwCheck
 
 
+//검색어 검사
+function searchCheck(f){
+	var word=f.word.value;
+	word=word.trim();
+	if(word.length==0){
+		alert("검색어를 입력하세요");
+		return false;//서버 전송 불가
+	}//if end
+	return true;     //서버로 전송
+}//searchCheck() end
 
-//비디오 재생
+
+
+//비디오 재생(메인)
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
     $(this).ekkoLightbox();
 });
-
 
 

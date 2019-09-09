@@ -42,7 +42,6 @@ bbsno subject   grpno  indent  snanum
 
 <div class="container">
 	<h3>답변 작성</h3>
-	<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
 	<%
 	//부모글 가져오기
 	int bbsno=Integer.parseInt(request.getParameter("bbsno"));
@@ -51,14 +50,8 @@ bbsno subject   grpno  indent  snanum
 		  method="post"
 		  action="bbsReplyProc.jsp"
 		  onsubmit="return bbsCheck(this)">
-		<!-- 
-		새글과 답변의 차이. 답변은 부모bbsno번호를 보내야한다.
-		페이지유지를 위해 col,word값도 넘겨준다
-		 -->
+		<!-- 새글과 답변의 차이. 답변은 부모bbsno번호를 보내야한다. -->
 		<input type="hidden" name="bbsno" value="<%=bbsno%>">
-		<input type="hidden" name="col" value="<%=col%>">
-		<input type="hidden" name="word" value="<%=word%>">
-		
 		<table class="table table-hover">
 			<tr>
 				<th>작성자</th>

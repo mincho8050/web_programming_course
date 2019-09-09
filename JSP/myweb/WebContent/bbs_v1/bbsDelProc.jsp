@@ -24,7 +24,7 @@ if(cnt==0){
 }else{
 	out.println("<script>");
 	out.println("	alert('게시글이 삭제되었습니다.');");
-	out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"';");//목록페이지이동
+	out.println("	location.href='bbsList.jsp';");//목록페이지이동
 	out.println("</script>");
 }//if
 
