@@ -20,12 +20,9 @@
 	</tr>
 
 	<%
-	  //한 페이지당 출력할 글의 줄수
-	  int recordPerPage=2;
-	
 	  //전체목록은  ArrayList<BbsDTO> list = dao.list();
 	  //검색목록(col 칼럼명, word 검색어)
-	  ArrayList<BbsDTO> list = dao.list(col,word,nowPage,recordPerPage);  
+	  ArrayList<BbsDTO> list = dao.list(col,word); 
 	  if(list==null){
 	      out.println("<tr>");
 	      out.println("  <td colspan='5'>게시글이 없습니다.</td>");
@@ -53,7 +50,7 @@
 					페이지는 연결이 끊기기 때문에 줬던 값을 다시 줘야 페이지가 유지된다.
 					그냥 단순하게 뒤로 가기 누르기는 서버에 요청하는게 아니라 브라우저에 남는 정보를 보여주기때문에 다르다.
 					 -->
-			    	<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>"><%=dto.getSubject()%></a>
+			    	<a href="bbsRead.jsp?bbsno=<%=dto.getBbsno()%>&col=<%=col%>&word=<%=word%>"><%=dto.getSubject()%></a>
 	<%
 					//조회수가 10 이상이면 hot이미지 출력
 					if(dto.getReadcnt()>=10){
@@ -75,26 +72,17 @@
 	<%          
 	      }//for end
 
-	%>
-	<!-- 페이지 리스트 시작 -->
-	<tr>
-		<td colspan="4" class="pageList">
-		<%//글 갯수
-		int totalRecord=dao.count(col, word);	//->totalRecord
-	    
-		String paging=new Paging().paging(totalRecord, nowPage, recordPerPage, col, word, "bbsList.jsp");
-		out.print(paging);
-		out.println("<tr>");
-	    out.println("  <td colspan='4' class='totalList'>");
-	    out.println("  <span class='total'>Total : </span>");
-	    out.println(totalRecord);
-	    out.println("  </td>");
-	    out.println("</tr>");
-		%>
-		</td>
-	</tr>
-	<!-- 페이지 리스트 끝 -->
+		  //글 갯수
+		  int totalRecord=dao.count(col, word);
+	      out.println("<tr>");
+	      out.println("  <td colspan='4'>");
+	      out.println("  글갯수 : <strong>");
+	      out.println(totalRecord);
+	      out.println("  </strong>");
+	      out.println("  </td>");
+	      out.println("</tr>");
 	      
+	%>      
 	<!-- 검색시작 -->    
       <tr>
       	<td colspan="4" style="text-align: center; height: 50px">

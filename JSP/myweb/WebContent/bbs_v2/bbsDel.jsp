@@ -2,20 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="ssi.jsp"%>
-<!-- 본문시작 bbsUpdate.jsp 비밀번호입력-->
+<!-- 본문시작 bbsDel.jsp -->
+<!-- 비밀번호가 일치되면 삭제하기 -> 비밀번호를 입력할 수 있는 폼 작성 -->
 <div class="container">
 
-<h3>게시글 수정</h3>
-<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">List</a></p>
+<h3>게시글 삭제</h3>
+<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
 
 <form method="post" 
-	  action="bbsUpdateForm.jsp"
+	  action="bbsDelProc.jsp"
 	  onsubmit="return pwCheck(this)">
 	  <!-- 페이지유지를 위해 col,word값도 넘겨준다 -->
 	<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
 	<input type="hidden" name="col" value="<%=col%>">
 	<input type="hidden" name="word" value="<%=word%>">
-	<input type="hidden" name="nowPage" value="<%=nowPage%>">
 	<table class="table">
 		<tr>
 			<th>비밀번호</th>

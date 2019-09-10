@@ -16,6 +16,7 @@ body {
   .navbar-brand,.bg-4{
   	font-family: 'Bad Script', cursive;
   	font-weight: bold;}
+  	
   /* 메인 비디오메뉴 */
   .title_video{
   		font-family: 'Bad Script', cursive;
@@ -33,10 +34,12 @@ body {
   /* 각 페이지마다 글제목 */
   .container > h3{font-family: 'Noto Sans KR', sans-serif !important;}
   h3{color:#e08585 !important;margin-bottom: 20px !important;}
+  
   /* 테이블 제목은 left , 다른건 center */
   .list{text-align: left !important; padding: 8px;}
   .table th{text-align: center;
 		  opacity:1 !important;}
+		  
   /* 페이지마다 이동링크 */	 
   .link{font-family: 'Bad Script', cursive !important;font-weight: bold;}
   p {font-size: 16px;}
@@ -48,7 +51,19 @@ body {
   a:visited { color: black; text-decoration: none !important;}
   a:hover { color: #ff6666 !important; text-decoration: none !important;}
   
-
+  /* 리스트 목록 클릭 */
+  #paging{ padding:8px 0 8px 0;}
+  #paging a{padding:3px;margin:2px;}
+  #paging a:hover{color:black !important;}
+  .now{color:#ff6666 !important;
+  	   margin:2px;
+  	   padding:3px;
+  	   cursor: pointer;} /* 현재 페이지 css. span태그로 묶여있음 */
+  .pageList{padding: 0px !important;}/* bbsList.jsp의 페이지 리스트가 들어가는 class */
+  .totalList{text-align: right !important;}/* Total td css */
+  .total{font-family: 'Bad Script', cursive !important; font-weight: bold !important;}/* Total글자 css */
+  
+  
   /* 메인 배경들 */
   .bg-1 { 
     background-color:#ffcccc; 
@@ -66,7 +81,8 @@ body {
   .bg-4 { 
     background-color: #e08585; 
     color: #fff;
-  }
+  }/* footer */
+  .bg-4 p{cursor:default;}
 
   .container-fluid {
     padding-top: 10px;
@@ -94,7 +110,7 @@ body {
   /* 각 페이지별 iuput type들 */
   input[type="button"],input[type="submit"],input[type="reset"]{
   		border:none !important; 
-  		margin: 0 10px 0 10px;
+  		margin: 0 10px;
   		padding:5px 7px;
   		border-radius:10px;
   		background-color: white !important;}
@@ -103,14 +119,14 @@ body {
  }
  .form_input{width:60%;}
  input:focus,textarea{outline:none;}
+ select{height: 26px;}
  select:focus{
-    border-color: gray;
-    outline:none;
+    border-color: none !important;
+    outline:none !important;
  }
- select:hover{border-color: gray !important;}
+ select:hover{border-color: none !important;outline:none !important;}
   
 /* --------------글쓰기창---------------------------- */
-
 .table-hover td{text-align: left;}
 .table-hover:last-child{text-align: center !important;}
 

@@ -23,8 +23,8 @@ if(cnt==0){
 	//>javascript:history.back() -> 뒤로 가겠다는 것.
 }else{
 	out.println("<script>");
-	out.println("	alert('게시글이 삭제되었습니다.');"); 
-	out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"&nowPage="+nowPage+"';");//목록페이지이동
+	out.println("	alert('게시글이 삭제되었습니다.');");
+	out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"';");//목록페이지이동
 	out.println("</script>");
 }//if
 

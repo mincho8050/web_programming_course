@@ -6,7 +6,7 @@
 
 <div class="container">
 	<h3>게시글 수정</h3>
-	<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">List</a></p>
+	<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
 	
 	<%
 	String passwd=request.getParameter("passwd").trim();
@@ -30,7 +30,6 @@
 		<input type="hidden" name="bbsno" value="<%=bbsno%>">
 		<input type="hidden" name="col" value="<%=col%>">
 		<input type="hidden" name="word" value="<%=word%>">
-		<input type="hidden" name="nowPage" value="<%=nowPage%>">
 		
 		<table class="table table-hover">
 			<tr>

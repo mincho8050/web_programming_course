@@ -10,6 +10,7 @@ import DBPKG.DBOpen;
 public class BbsDAO {
 	//Data Access Object 데이터접근객체
 	
+	//글추가
 	public int insert(BbsDTO dto){
 		int cnt=0;
 		try{
@@ -41,7 +42,7 @@ public class BbsDAO {
 	}//insert
 	
 	
-	//1)전체리스트
+	//전체리스트-리스트1
 	public ArrayList<BbsDTO> list(){
 			//DB에서 가져온 데이터를 list에서 모아서
 			//sungjukList.jsp에 전달한다.
@@ -79,62 +80,8 @@ public class BbsDAO {
 			return list;
 		}//list 1
 	
-	 
-	//2) 검색리스트 
-	public ArrayList<BbsDTO> list(String col, String word){
-		
-		ArrayList<BbsDTO> list=null;
-		try{
-            Connection con=DBOpen.getConnection();
-            StringBuilder sql=new StringBuilder();
-            sql.append(" SELECT bbsno, wname, subject, readcnt, regdt, indent");
-			sql.append(" FROM tb_bbs ");
-            
-            if(word.trim().length()>=1){ //검색어 있다면?
-                String search="";
-                if(col.equals("wname")){
-                    search+=" WHERE wname LIKE '%" + word + "%' ";
-                }else if(col.equals("subject")){
-                    search+=" WHERE subject LIKE '%" + word + "%' ";
-                }else if(col.equals("content")){
-                    search+=" WHERE content LIKE '%" + word + "%' ";
-                }else if(col.equals("subject_content")){
-                    search+=" WHERE subject LIKE '%" + word + "%' ";
-                    search+=" OR content LIKE '%" + word + "%' ";
-                }//if end
-                sql.append(search);
-            }//if end            
-            
-            sql.append(" ORDER BY grpno DESC, ansnum ASC");
-			
-			
-			PreparedStatement pstmt=con.prepareStatement(sql.toString());
-			ResultSet rs=pstmt.executeQuery();
-			if(rs.next()){
-				list=new ArrayList<BbsDTO>(); //전체저장
-				do{
-					BbsDTO dto=new BbsDTO(); //한줄저장
-					dto.setBbsno(rs.getInt("bbsno"));
-					dto.setSubject(rs.getString("subject"));
-					dto.setReadcnt(rs.getInt("readcnt"));
-					dto.setWname(rs.getString("wname"));
-					dto.setRegdt(rs.getString("regdt"));
-					dto.setIndent(rs.getInt("indent"));
-					list.add(dto);
-				}while(rs.next());//do~while
-				
-			}
-			
-		}catch(Exception e){
-			System.out.println("검색 실패 : "+e);
-		}
-		
-		return list;
-	}//list 2
-	
-	
-	 
-	
+
+	//상세보기1
 	public BbsDTO read(int bbsno){
 		 	BbsDTO dto=null;
 			
@@ -170,7 +117,7 @@ public class BbsDAO {
 			return dto;
 		};//read
 		
-	 
+	//글조회수
 	public void incrementCnt(int bbsno){
 		try{
 			Connection con=DBOpen.getConnection();
@@ -188,7 +135,7 @@ public class BbsDAO {
 		}//try
 	}//incrementCnt
 	 
-	 
+	//글삭제
 	public int delete(BbsDTO dto){
         int cnt=0;
         try{
@@ -213,7 +160,7 @@ public class BbsDAO {
     }//delete
 	
 
-	
+	//상세보기2-DTO이용
 	public BbsDTO read2(BbsDTO dto){
 	 	
 		
@@ -250,7 +197,7 @@ public class BbsDAO {
 		return dto;
 	};//read
 	
-	
+	//글수정
 	public int update(BbsDTO dto){
 		int cnt=0;
 		try{
@@ -343,8 +290,175 @@ public class BbsDAO {
 		
 	}//reply
 	
+	//검색리스트-리스트2
+	public ArrayList<BbsDTO> list(String col, String word){
+			
+			ArrayList<BbsDTO> list=null;
+			try{
+	            Connection con=DBOpen.getConnection();
+	            StringBuilder sql=new StringBuilder();
+	            sql.append(" SELECT bbsno, wname, subject, readcnt, regdt, indent");
+				sql.append(" FROM tb_bbs ");
+	            
+	            if(word.trim().length()>=1){ //검색어 있다면?
+	                String search="";
+	                if(col.equals("wname")){
+	                    search+=" WHERE wname LIKE '%" + word + "%' ";
+	                }else if(col.equals("subject")){
+	                    search+=" WHERE subject LIKE '%" + word + "%' ";
+	                }else if(col.equals("content")){
+	                    search+=" WHERE content LIKE '%" + word + "%' ";
+	                }else if(col.equals("subject_content")){
+	                    search+=" WHERE subject LIKE '%" + word + "%' ";
+	                    search+=" OR content LIKE '%" + word + "%' ";
+	                }//if end
+	                sql.append(search);
+	            }//if end            
+	            
+	            sql.append(" ORDER BY grpno DESC, ansnum ASC");
+				
+				
+				PreparedStatement pstmt=con.prepareStatement(sql.toString());
+				ResultSet rs=pstmt.executeQuery();
+				if(rs.next()){
+					list=new ArrayList<BbsDTO>(); //전체저장
+					do{
+						BbsDTO dto=new BbsDTO(); //한줄저장
+						dto.setBbsno(rs.getInt("bbsno"));
+						dto.setSubject(rs.getString("subject"));
+						dto.setReadcnt(rs.getInt("readcnt"));
+						dto.setWname(rs.getString("wname"));
+						dto.setRegdt(rs.getString("regdt"));
+						dto.setIndent(rs.getInt("indent"));
+						list.add(dto);
+					}while(rs.next());//do~while
+					
+				}
+				
+			}catch(Exception e){
+				System.out.println("검색 실패 : "+e);
+			}
+			
+			return list;
+		}//list 2
 	
+	//글 갯수
+	public int count(String col, String word){
 		
+		int cnt=0;
+		try{
+			Connection con=DBOpen.getConnection();
+			StringBuilder sql=new StringBuilder();
+			sql.append(" SELECT COUNT(*) AS cnt ");
+			sql.append(" FROM tb_bbs ");
+			
+			if(word.trim().length()>=1){ //검색어 있다면?
+                String search="";
+                if(col.equals("wname")){
+                    search+=" WHERE wname LIKE '%" + word + "%' ";
+                }else if(col.equals("subject")){
+                    search+=" WHERE subject LIKE '%" + word + "%' ";
+                }else if(col.equals("content")){
+                    search+=" WHERE content LIKE '%" + word + "%' ";
+                }else if(col.equals("subject_content")){
+                    search+=" WHERE subject LIKE '%" + word + "%' ";
+                    search+=" OR content LIKE '%" + word + "%' ";
+                }//if end
+                sql.append(search);
+            }//if end
+			
+			PreparedStatement pstmt=con.prepareStatement(sql.toString());
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()){
+				cnt=rs.getInt("cnt");
+			}
+			
+			
+		}catch(Exception e){
+			System.out.println("글 갯수 실패 : "+e);
+		}
+		
+		
+		return cnt;
+
+	}//totalRecord
+	
+	//페이지리스트-리스트3
+	public ArrayList<BbsDTO> list(String col, String word, int nowPage, int recordPerPage){
+        ArrayList<BbsDTO> list=null;
+        
+        // 페이지당 출력할 레코드 갯수 (10개를 기준)
+        // 1 page : WHERE r>=1 AND r<=10
+        // 2 page : WHERE r>=11 AND r<=20
+        // 3 page : WHERE r>=21 AND r<=30
+        int startRow = ((nowPage-1) * recordPerPage) + 1 ;
+        int endRow   = nowPage * recordPerPage;
+        
+        try{
+            Connection con=DBOpen.getConnection();
+            StringBuilder sql=new StringBuilder();
+          
+          word = word.trim(); //검색어의 좌우 공백 제거
+          
+          if(word.length()==0) { //검색을 하지 않는 경우
+            sql.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
+            sql.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
+            sql.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
+            sql.append("              FROM tb_bbs");
+            sql.append("              ORDER BY grpno DESC, ansnum ASC");
+            sql.append("           )");
+            sql.append("     )");
+            sql.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+          } else {
+            //검색을 하는 경우
+            sql.append(" SELECT bbsno,subject,wname,readcnt,indent,regdt, r");
+            sql.append(" FROM( SELECT bbsno,subject,wname,readcnt,indent,regdt, rownum as r");
+            sql.append("       FROM ( SELECT bbsno,subject,wname,readcnt,indent,regdt");
+            sql.append("              FROM tb_bbs");
+            
+            String search="";
+            if(col.equals("wname")) {
+              search += " WHERE wname LIKE '%" + word + "%'";
+            } else if(col.equals("subject")) {
+              search += " WHERE subject LIKE '%" + word + "%'";
+            } else if(col.equals("content")) {
+              search += " WHERE content LIKE '%" + word + "%'";
+            } else if(col.equals("subject_content")) {
+              search += " WHERE subject LIKE '%" + word + "%'";
+              search += " OR content LIKE '%" + word + "%'";
+            }
+            
+            sql.append(search);        
+            
+            sql.append("              ORDER BY grpno DESC, ansnum ASC");
+            sql.append("           )");
+            sql.append("     )");
+            sql.append(" WHERE r>=" + startRow + " AND r<=" + endRow) ;
+          }//if end
+          
+          PreparedStatement pstmt=con.prepareStatement(sql.toString());
+          ResultSet rs=pstmt.executeQuery();
+          if(rs.next()){
+            list=new ArrayList<>();
+            do{
+              BbsDTO dto=new BbsDTO();
+              dto.setBbsno(rs.getInt("bbsno"));
+              dto.setSubject(rs.getString("subject"));
+              dto.setWname(rs.getString("wname"));
+              dto.setReadcnt(rs.getInt("readcnt"));
+              dto.setRegdt(rs.getString("regdt"));
+              dto.setIndent(rs.getInt("indent"));
+              list.add(dto);
+            }while(rs.next());
+          }//if end
+          
+        }catch(Exception e) {
+          System.out.println("목록 페이징 실패: "+e);
+        }   
+        return list;
+      }//list() end
+	
+	
 	
 	
 }//

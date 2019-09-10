@@ -18,7 +18,7 @@
 <h3>게시글</h3>
 <p class="link">
 	<a href="bbsForm.jsp">Write</a>&nbsp;&nbsp;
-	<a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">List</a>
+	<a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a>
 </p>
 
 	<%
@@ -63,9 +63,9 @@
      위에 List 링크가 있어서 만들진 않았다.
     <input type="button" value="목록" onclick="location.href='bbsList.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>'"> 
     --%>
-    <input type="button" value="답변" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'">
-    <input type="button" value="수정" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'">
-    <input type="button" value="삭제" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'">
+    <input type="button" value="답변" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>'">
+    <input type="button" value="수정" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>'">
+    <input type="button" value="삭제" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno %>&col=<%=col%>&word=<%=word%>'">
 	<%
 	}//if
 	

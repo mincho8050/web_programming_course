@@ -22,16 +22,4 @@
 	//String값이 null이면 공백 문자열 반환
 	col=Utility.checkNull(col);
 	word=Utility.checkNull(word);
-	
-	//------------------------------------------------------------
-	
-	//현재 페이지
-	int nowPage=1;
-	if(request.getParameter("nowPage")!=null){
-		nowPage=Integer.parseInt(request.getParameter("nowPage"));
-	}
-	
-	//------------------------------------------------------------
-	
-	
 %>

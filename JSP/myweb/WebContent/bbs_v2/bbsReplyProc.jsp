@@ -28,7 +28,7 @@
 	}else{
 		out.println("<script>");
 		out.println("	alert('답변이 입력되었습니다.');");
-		out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"&nowPage="+nowPage+"';");
+		out.println("	location.href='bbsList.jsp?col="+col+"&word="+word+"';");
 		out.println("</script>");
 	}//if
 	

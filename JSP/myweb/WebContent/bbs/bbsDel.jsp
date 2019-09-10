@@ -7,7 +7,7 @@
 <div class="container">
 
 <h3>게시글 삭제</h3>
-<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>">List</a></p>
+<p class="link"><a href="bbsList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">List</a></p>
 
 <form method="post" 
 	  action="bbsDelProc.jsp"
@@ -16,6 +16,8 @@
 	<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
 	<input type="hidden" name="col" value="<%=col%>">
 	<input type="hidden" name="word" value="<%=word%>">
+	<input type="hidden" name="nowPage" value="<%=nowPage%>">
+	
 	<table class="table">
 		<tr>
 			<th>비밀번호</th>
