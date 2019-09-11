@@ -82,6 +82,30 @@ function searchCheck(f){
 }//searchCheck() end
 
 
+//로그인 체크
+function loginCheck(f){
+	//로그인 유효성 검사
+	//1) 아이디 5~10글자 이내
+	var id=f.id.value;
+	id=id.trim();
+	if(id.length<5 || id.length>10){
+		alert("아이디 5~10글자 이내로 입력해주세요");
+		f.id.focus();
+		return false;
+	}
+	//2) 비밀번호 5~10글자 이내
+	var passwd=f.passwd.value;
+	passwd=passwd.trim();
+	if(passwd.length<5 || passwd.length>10){
+		alert("비밀번호 5~10글자 이내로 입력해주세요");
+		f.passwd.focus();
+		return false;
+	}
+	
+	return true;
+}//loginCheck
+
+
 
 //비디오 재생(메인)
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {

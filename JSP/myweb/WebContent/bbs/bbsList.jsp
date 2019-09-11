@@ -21,7 +21,7 @@
 
 	<%
 	  //한 페이지당 출력할 글의 줄수
-	  int recordPerPage=2;
+	  int recordPerPage=5;
 	
 	  //전체목록은  ArrayList<BbsDTO> list = dao.list();
 	  //검색목록(col 칼럼명, word 검색어)
