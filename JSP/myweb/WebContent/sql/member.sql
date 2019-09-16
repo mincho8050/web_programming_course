@@ -40,7 +40,12 @@ WHERE id=? AND passwd=?
 AND mlevel in ('A1', 'B1', 'C1', 'D1');
 
 
-
+--아이디 중복확인
+--카운트한 값이 1이 나오면 쓸 수 없음. (중복)
+--0이 나와야 id로 쓸 수 있음
+SELECT COUNT(id)
+FROM member
+WHERE id=?
 
 
 

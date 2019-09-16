@@ -4,7 +4,7 @@
 <%@ include file="ssi.jsp"%>
 <!-- 본문시작 loginProc.jsp-->
 <div class="container">
-	<h3>로그인 결과</h3>
+	<h3>로그인</h3>
 	<%
 	String id=request.getParameter("id").trim();
 	String passwd=request.getParameter("passwd").trim();

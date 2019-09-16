@@ -28,7 +28,7 @@
 	//4) 글쓰기 성공후 bbsList.jsp로 이동하기
 	if(cnt==0){
 		out.println("<p>게시글 등록이 실패했습니다.</p>");
-		out.println("<p><a href='javascript:history.back()'>[다시 시도]</p>");
+		out.println("<p><a href='javascript:history.back()'>다시 시도</p>");
 		//>javascript:history.back() -> 뒤로 가겠다는 것.
 	}else{
 		out.println("<script>");

@@ -458,7 +458,7 @@ public class BbsDAO {
         return list;
       }//list() end
 	
-	
+
 	
 	
 }//

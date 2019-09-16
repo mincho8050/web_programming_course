@@ -140,5 +140,6 @@ body {
 /*----비밀번호창-----  */
 .pass_input{height: 100px !important; padding-top:30px !important;}
 
-
-
+/*-----회원가입창----------*/
+.memberForm td{text-align: left;}
+.memberForm:last-child{text-align: center !important;}
