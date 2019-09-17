@@ -48,6 +48,21 @@ FROM member
 WHERE id=?
 
 
+--회원정보 수정
+--아이디와 비번이 같은걸 수정
+--1) 일단 불러오기
+SELECT id, passwd, mname, email, tel, zipcode, address1, address2, job
+FROM member
+WHERE id=? AND passwd=?
+--2)업데이트
+UPDATE member
+SET passwd=?, mname=?, tel=?, email=?, zipcode=?, address1=?, address2=?, job=?
+WHERE id=?
 
+--회원탈퇴
+--탈퇴지만 삭제하는게 아니라 멤버등급을 F1으로 조정
+UPDATE member
+SET mlevel='F1'
+WHERE id=? AND passwd=?
 
 

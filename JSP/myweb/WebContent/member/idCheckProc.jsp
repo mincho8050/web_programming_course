@@ -18,12 +18,12 @@
 	int cnt=dao.duplecateID(id);  
 	out.println("입력 ID : <strong>"+id+"</strong>");
 	if(cnt==0){
-		out.println("<p>사용가능한 아이디입니다.</p>");
-		out.println("<a href='javascript:applyId(\""+id+"\")'>적용</a>");
+		out.println("<p style='font-size:14px'>사용가능한 아이디입니다.</p>");
+		out.println("<a href='javascript:applyId(\""+id+"\")' style='font-size:14px'>적용</a>");
 		
 		
 	}else{
-		out.println("<p>이미 사용중인 아이디입니다.<br> 다시 입력해주세요.</p>"); 
+		out.println("<p style='font-size:14px'>이미 사용중인 아이디입니다.<br> 다시 입력해주세요.</p>"); 
 	}
 	%>
 	<hr>

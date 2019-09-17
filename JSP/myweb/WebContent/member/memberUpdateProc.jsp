@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="ssi.jsp"%>
-<!-- 본문시작 memberProc.jsp -->
+<%@ include file="auth.jsp"%>
+<!-- 본문시작 memberUpdateProc.jsp-->
 <div class="container">
-	<h3>회원가입 결과</h3>
+	<h3>회원정보 수정 결과</h3>
 	<%
 	//1) 사용자가 입력 요청한 정보 가져오기
 	String id=request.getParameter("id").trim();
@@ -28,16 +29,18 @@
 	dto.setAddress2(address2);
 	dto.setJob(job);
 	
-	int cnt=dao.insert(dto); 
+	int cnt=dao.update(dto);  
 	
 	if(cnt==0){
-		out.println("<p style='font-size:14px'>회원가입이 실패했습니다. \\n 다시 한번 시도해주세요</p>");
+		out.println("<p style='font-size:14px'>회원정보 수정이 실패했습니다. \\n다시 한번 시도해주세요</p><br>");
 		out.println("<p><a href='javascript:history.back()' style='font-size:14px'>다시 시도</p>");
 		//>javascript:history.back() -> 뒤로 가겠다는 것.
 	}else{
+		//그냥 그대로 로그인 상태로 가면 바뀐 비밀번호가 적용되지 않아 한번 더 로그아웃 후에 
+		//로그인 할 수 있도록 한다.
 		out.println("<script>");
-	  	out.println("	alert('회원 가입 되었습니다!!\\n로그인 페이지로 이동합니다'); ");
-	  	out.println("	location.href='loginForm.jsp'; ");
+	  	out.println("	alert('회원정보 수정이 완료되었습니다. \\n다시 한번 로그인해주세요'); ");
+	  	out.println("	location.href='logout.jsp'; ");
 	  	out.println("</script>");
 	}//if
 	
