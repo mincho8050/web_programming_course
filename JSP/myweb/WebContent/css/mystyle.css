@@ -37,6 +37,7 @@ body {
   h3{color:#e08585 !important;margin-bottom: 20px !important;}
   
   /* 테이블 제목은 left , 다른건 center */
+  td{text-align: center;}
   .list{text-align: left !important; padding: 8px;}
   .table th{text-align: center;
 		  opacity:1 !important;}

@@ -98,12 +98,13 @@ D:\java0514\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp2\wtpweb
 
 
 
+------
 
 
 
+# 포토갤러리(이미지게시판)
 
-
-
+- 쓰기, 목록, 상세보기
 
 
 

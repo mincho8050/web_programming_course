@@ -15,7 +15,7 @@
 <tr>
 	<th>*아이디</th>
 	<td>
-      <input type="text" name="id" id="id" size="15" readonly >
+      <input type="text" name="id" id="id" size="15" readonly>
       <input type="button" value="ID중복확인" onclick="idCheck()">	
 	</td>
 </tr>
@@ -34,13 +34,13 @@
 <tr>
 	<th>*이메일</th>
 	<td>
-      <input type="text" name="email" id="email" size="30" readonly>
+      <input type="text" name="email" id="email" size="30" readonly class="form_input">
       <input type="button" value="Email 중복확인" onclick="emailCheck()">	
 	</td>
 </tr>
 <tr>
 	<th>전화번호</th>
-	<td><input type="text" name="tel" id="tel" size="15"></td>
+	<td><input type="text" name="tel" id="tel" size="15" class="form_input"></td>
 </tr>
 <tr>
 	<th>우편번호</th>
@@ -51,11 +51,11 @@
 </tr>
 <tr>  
   <th>주소</th>
-  <td><input type="text" name="address1" id="address1" size="45" readonly></td>
+  <td><input type="text" name="address1" id="address1" size="45" readonly class="form_input"></td>
 </tr>
 <tr>  
   <th>나머지주소</th>
-  <td><input type="text" name="address2" id="address2" size="45"></td>
+  <td><input type="text" name="address2" id="address2" size="45" class="form_input"></td>
 </tr>
 <tr>  
   <th>직업</th>

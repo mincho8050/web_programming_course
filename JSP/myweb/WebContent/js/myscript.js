@@ -1,6 +1,7 @@
 /*myscript.js*/
 
-
+//-----------------------------------------------------------------------
+//게시판 bbs
 
 //게시판 유효성 검사
 function bbsCheck(f) {
@@ -107,6 +108,8 @@ function loginCheck(f){
 }//loginCheck
 
 //---------------------------------------------------------------------------
+//회원가입 member
+
 
 //회원가입 약관동의
 function send(f){
@@ -232,6 +235,74 @@ function memberCheck(f){
 	//유효성 검사를 모두 통과했으므로 memeberProc.jsp로 전송됨
 	
 }//memberCheck
+
+
+//---------------------------------------------------------------------------
+//포토갤러리 pds
+
+
+//포토갤러리 유효성 검사
+function pdsCheck(f){
+	//1) 이름
+	var wname=f.wname.value;
+	wname=wname.trim();
+	if(wname.length<2){
+		alert("작성자 2글자 이상 입력해주세요");
+		f.wname.focus();
+		return false;
+	}
+	
+	//2) 제목
+	var subject=f.subject.value;
+	subject=subject.trim();
+	if(subject.length<2){
+		alert("제목 2글자 이상 입력해주세요");
+		f.subject.focus();
+		return false;
+	}
+	
+	//3) 비밀번호 4~15글자 이내
+	var passwd=f.passwd.value;
+	passwd=passwd.trim();
+	if(passwd.length<4 || passwd.length>15){
+		alert("비밀번호 4~15글자 이내로 입력해주세요");
+		f.passwd.focus();
+		return false;
+	}
+	
+	//4) 첨부파일
+	//파일명 맨 마지막의 .의 글자를 알아와서 잘라냄
+	//jpg,png,gif만 적용(대,소문자도 동일한 파일이므로 소문자로 변경해서 알아봄)
+	var filename=f.filename.value;
+	filename=filename.trim();
+	if(filename.length==0){
+		alert("첨부파일을 선택해주세요");
+		return false;
+	}else{
+		//alert(filename);
+		//alert(filename.lastIndexOf(".")); 
+		//파일타입을 출력
+		var dot=filename.lastIndexOf(".");//마지막 .의 위치
+		var ext=filename.substr(dot+1);//확장명
+		ext=ext.toLowerCase(); //전부 소문자로 치환
+		//alert("확장명 : "+ext);
+		if(ext=="png" || ext=="jpg" || ext=="gif"){
+			return true;
+			//alert("이미지 전송 완료");
+		}else{
+			alert("이미지 파일만 가능합니다.");
+			return false;
+		}
+		
+	}//if
+	
+	//return true;
+	
+}//pdsCheck
+
+
+
+
 
 
 //---------------------------------------------------------------------------
