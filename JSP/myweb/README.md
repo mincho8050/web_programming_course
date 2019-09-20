@@ -110,13 +110,43 @@ D:\java0514\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp2\wtpweb
 
 
 
+------
 
 
 
+# 메일서버(POP3, SMTP)
+
+- DB서버
+- Web 서버
+- 메일 서버(POP3, SMTP)
 
 
 
+## 자바 메일 보내기
 
+- 문의 메일 보내기, 쇼핑몰에 상품 구매 후에 구매완료되었습니다등
+    자바코드를 이용해서 메일을 보낸다.
+
+- 메일 서버(POP3/SMTP) 구축후, 메일 라이브러리를 통해서
+    간편하게 메일을 전송할수 있는 JSP파일을 작성한다.
+    별도로 메일 서버는 구축하지 않고 카페24 메일 서버를 활용할 예정.
+
+- 카페24 유료 회원이면 카페24에서 제공하는 메일 서버를 계정 인증후의 3개까지 사용할 수 있다.(유료전환)
+    [http://www.cafe24.com](http://www.cafe24.com/)  -> 나의 서비스 관리 -> 이메일계정 추가/삭제
+
+
+
+- JAF(JavaBeans Activation Framework)와  JavaMail 라이브러리가 필요
+
+    1) JAF 다운로드 jaf-1_1_1.zip -> activation.jar
+        http://www.oracle.com/technetwork/java/jaf11-139815.html
+
+    2) javaMail 다운로드 javamail1_4_7.zip -> mail.jar
+        http://www.oracle.com/technetwork/java/javamail/javamail145-1904579.html
+
+  ​      JavaMail 1.5 -> http://www.oracle.com/technetwork/java/index-138643.html
+
+ 	 3) mail.jar와 activation.jar 를 /WEB-INF/lib/폴더에 복사
 
 
 

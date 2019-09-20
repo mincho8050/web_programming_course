@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import net.utility.Utility;
 import DBPKG.DBOpen;
 
 public class PdsDAO {
@@ -82,5 +83,98 @@ public class PdsDAO {
 		
 		return list;
 	}//list
+	
+	
+	//사진 상세보기
+	public PdsDTO read(int pdsno) {
+		PdsDTO dto=null; 
+		
+		try{
+			Connection con=DBOpen.getConnection();
+			StringBuilder sql=new StringBuilder();
+			sql.append(" SELECT pdsno, wname, subject, regdate, passwd, readcnt, filename, filesize ");
+			sql.append(" FROM tb_pds ");
+			sql.append(" WHERE pdsno=? ");
+			
+			PreparedStatement pstmt=con.prepareStatement(sql.toString());
+			pstmt.setInt(1, pdsno);
+			
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next()){
+				dto=new PdsDTO();
+				dto.setPdsno(rs.getInt("pdsno"));
+				dto.setWname(rs.getString("wname"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setPasswd(rs.getString("passwd"));
+				dto.setReadcnt(rs.getInt("readcnt"));
+				dto.setFilename(rs.getString("filename"));
+				dto.setFilesize(rs.getLong("filesize"));
+			}else{
+				dto=null;
+			}//if
+			
+			
+		}catch(Exception e){
+			System.out.println("사진 상세보기 실패 : "+e);
+		}//try
+		
+		return dto;
+	}//read
+	
+	
+	//조회수 증가
+	public void incrementCnt(int pdsno){
+		try{
+			Connection con=DBOpen.getConnection();
+			StringBuilder sql=new StringBuilder();
+			sql.append(" UPDATE tb_pds ");
+			sql.append(" SET readcnt=readcnt+1 ");
+			sql.append(" WHERE pdsno=? ");
+			
+			PreparedStatement pstmt=con.prepareStatement(sql.toString());
+			pstmt.setInt(1, pdsno);
+			pstmt.executeUpdate();
+			
+		}catch(Exception e){
+			System.out.println("조회수 증가 실패 : "+e);
+		}//try
+	}//incrementCnt
+	
+	
+	//사진 삭제
+	public int delete(int pdsno, String passwd, String saveDir){
+		int cnt=0;
+		
+		try{
+			//삭제하고자 하는 파일명을 가져온다
+			String filename="";
+			PdsDTO oldDTO=read(pdsno); //상세보기함수
+			if(oldDTO!=null){
+				filename=oldDTO.getFilename();
+			}//if
+			
+			Connection con=DBOpen.getConnection();
+			StringBuilder sql=new StringBuilder();
+			sql.append(" DELETE FROM tb_pds ");
+			sql.append(" WHERE passwd=? AND pdsno=? ");
+			
+			PreparedStatement pstmt=con.prepareStatement(sql.toString());
+            pstmt.setString(1, passwd);
+            pstmt.setInt(2, pdsno);
+                        
+            cnt=pstmt.executeUpdate();
+            if(cnt==1){//테이블에서 행삭제가 성공했으므로 
+            		   //첨부된 파일도 삭제 (경로와 파일명을 알아야함)
+            		   //경로는 saveDir
+            	Utility.deleteFile(saveDir,filename);           	
+            }
+			
+		}catch(Exception e){
+			System.out.println("사진 삭제 실패 : "+e);
+		}
+		
+		return cnt;
+	}//delete
 	
 }//class

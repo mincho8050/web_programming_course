@@ -105,7 +105,8 @@ body {
   
   .navbar-default{margin: 0 !important;}
   
-
+  
+  footer{clear: both;}
   footer>p{padding-top: 10px;}
   
   
@@ -129,7 +130,7 @@ body {
  select:hover{border-color: none !important;outline:none !important;}
   
 /* --------------글쓰기창---------------------------- */
-.table-hover td{text-align: left;}
+.table-hover td{text-align: left !important;} /* 로그인창 안겹치게 하려고 */
 .table-hover:last-child{text-align: center !important;}
 
 
@@ -145,3 +146,34 @@ body {
 /*-----회원가입창----------*/
 .memberForm td{text-align: left;}
 .memberForm:last-child{text-align: center !important;}
+
+
+/*------포토갤러리-------------------*/
+.photo{padding-left: 60px !important;}
+.photo1{
+	width:30%; 
+	min-width:280px;
+	height: 500px; 
+	float: left;
+	margin: 1%;}
+
+.p_img{width:85%;
+	   height:60%;
+	   border-radius:20px;}
+.p_sub p{margin-top: 20px;font-size: 14px !important;}
+.p_name p{margin-top: 20px;
+	   color: #ff6666 !important;
+	   font-size: 14px !important;
+	   font-weight: bold;}
+.p_date p{margin-top: 20px;
+		margin-bottom: 0px;
+		font-size: 14px !important;}
+
+@media screen and (max-width: 768px) {
+	.photo{padding-left: 20% !important;}
+	.photo h3,p{text-indent: -50px;}
+	.photo1{width: 70% !important;}
+	}/*미디어쿼리  */
+
+
+

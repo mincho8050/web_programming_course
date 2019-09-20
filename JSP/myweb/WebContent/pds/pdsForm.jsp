@@ -6,6 +6,9 @@
 <div class="container">
 
 <h3>사진 올리기</h3>
+<p class="link">
+	<a href="pdsList.jsp">List</a>
+</p>
 
 <form name=""
 	  method="post"
@@ -19,8 +22,8 @@
 		<td><input type="text" name="wname" size="20" maxlength="100" required autofocus class="form_input"></td>
 	</tr>
 	<tr>
-		<th>제목</th>
-		<td><textarea rows="5" cols="30" class="form_input" name="subject"></textarea></td>
+		<th>내용</th>
+		<td><textarea rows="5" cols="20" type="text" class="form_input" name="subject"></textarea></td>
 	</tr>
 	<tr>
 		<th>비밀번호</th>
