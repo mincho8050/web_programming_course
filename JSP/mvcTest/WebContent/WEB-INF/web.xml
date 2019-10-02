@@ -8,11 +8,11 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- 세션시간(20분) 등록 -->
+  <!-- 세션시간(20분) 등록 -> 분단위 -->
   <session-config>
-  	<session-timeout>1200</session-timeout>
+  	<session-timeout>20</session-timeout>
   </session-config>
-  
+
   <!-- 서블릿 등록 -->
   <servlet>
   	<servlet-name>hello</servlet-name>
@@ -59,7 +59,19 @@
   	<url-pattern>/loginproc.do</url-pattern>
   </servlet-mapping>
   
+  <!-- 에러가 발생했을 때 처리할 페이지의 정보 -->
+  <!-- 없는 페이지 불러올때의 에러메시지 -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error/404code.jsp</location>
+  </error-page>
   
-  
+  <!-- 요청파라미터값이 없을때 가져오는 경우 -->
+  <!--http://localhost:8090/mvcTest/error/test.jsp -->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/error/500code.jsp</location>
+  </error-page>
+
 	  
 </web-app>

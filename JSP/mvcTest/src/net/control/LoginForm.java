@@ -28,9 +28,7 @@ public class LoginForm extends HttpServlet{
 		//>절대경로를 숨길 수 있다.
 		String view="control/loginForm.jsp";
 		RequestDispatcher rd=req.getRequestDispatcher(view);
-		rd.forward(req,  resp);
-		
-		
+		rd.forward(req,  resp);		
 		
 	}//doGet
 	
