@@ -1,0 +1,13 @@
+-- mem.txt
+
+-- 테이블 생성
+CREATE TABLE mem(
+	num NUMBER,
+	name VARCHAR2(20),
+	age NUMBER
+);
+
+-- 시퀀스 생성
+CREATE SEQUENCE mem_seq;
+
+
