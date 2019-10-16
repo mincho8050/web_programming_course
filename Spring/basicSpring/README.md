@@ -180,6 +180,7 @@ spring-framework-4.0.4.RELEASE-dist.zip 다운 후 압축 풀기
 - Spring 관련 라이브러리(의존성) 검색
 
   - [http://mvnrepository.com](http://mvnrepository.com/)
+  - 필요한 라이브러리는 여기서 검색해서 다운받기(한곳에 모여있음)
 
 
 
