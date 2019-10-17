@@ -29,18 +29,47 @@
 	<script>
 		$("button").click(function(){
 			//alert();
+			//1)
+			/*
 			$.ajax({
-				url:"test.do",//요청명령어
+				url:"test.do",//요청명령어 > /form1/member/test.do 임.
 				method:"get", //get | post
 				dataType:"text",//문자열
 				error:function(xhr, status, error){//callback함수
 					alert("에러!! "+error);
 				},//error 
 				success:function(result, status, xhr){//callback함수
-					alert(result);
+					//alert(result);
+					//$("#panel").append(result); //댓글형태로추가
+					$("#panel").empty(); //지우는거
+					$("#panel").text(result); //오버라이트
+					
 				}//success
-			});
+			});//ajax
+			*/
+			
+			//2)
+			/*
+			//Ajax객체의 기본값 지정
+			$.ajaxSetup({dataType:"text"});
+			//get방식으로 요청
+			//$.get("요청명령어",callback함수)
+			$.get("test.do",function(result){
+				$("#panel").append(result);
+			});//get
+			*/
+			
+			//3)callback함수 호출
+			//> 주의! callback함수 뒤에 ()를 붙이지 않는다.
+			$.get("test.do",responseProc);//get
+			
 		})//click
+		
+		//3번 callback함수
+		function responseProc(result){
+			$("#panel").append(result);
+		}//responseProc
+		
 	</script>
 
 
