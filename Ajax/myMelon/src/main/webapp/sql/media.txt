@@ -10,3 +10,25 @@ CREATE TABLE media (
 );
 
 -- 글자크기 조절 Ctrl + Shift + +/-
+
+--행추가
+INSERT INTO media(mediano, title, poster, filename, filesize, rdate)
+VALUES((SELECT NVL(MAX(mediano),0)+1 AS mediano FROM media),?,?,?,?,SYSDATE)
+
+--읽어오기
+SELECT mediano, title, poster, filename, filesize, rdate
+FROM media
+WHERE mview='Y'
+ORDER BY mediano DESC
+
+--상세보기
+SELECT mediano, title, poster, filename, filesize, rdate, mview
+FROM media
+WHERE mediano=?
+
+--업데이트
+UPDATE media
+SET title=?, poster=?, filename=?, filesize=?
+WHERE mediano=?
+
+

@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>media/createForm.jsp</title>
+  <title>media/updateForm.jsp</title>
   <style type="text/css">
   *{
     font-family: gulim;
@@ -14,23 +14,30 @@
   <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div class='title'>음원 등록</div>
+  <div class='title'>음원 수정</div>
   <form method="post"
-        action="./create.do"
-        enctype="multipart/form-data" > 
+        action="./update.do"
+        enctype="multipart/form-data" >
+    <input type="hidden" name="mediano" value="${dto.mediano }">     
     
     <table align='center' border='1px' cellspacing='0px' cellpadding='5px'>
     <tr>
       <th>제목</th>
-      <td><input type='text' name='title' size='50' value='mp3'></td>    
+      <td><input type='text' name='title' size='50' value='${dto.title }'></td>    
     </tr>
     <tr>
       <th>포스터</th>
-      <td><input type='file' name='posterMF' size='50'></td>    
+      <td>
+      	<img src="storage/${dto.poster }" width="100"><br>
+      	<input type='file' name='posterMF' size='50'>
+      </td>    
     </tr>
     <tr>
       <th>미디어 파일</th>
-      <td><input type='file' name='filenameMF' size='50'></td>    
+      <td>
+      	등록된 파일 : ${dto.filename }<br>
+      	<input type='file' name='filenameMF' size='50'>
+      </td>    
     </tr>    
   </table>    
 
